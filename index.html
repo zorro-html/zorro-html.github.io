@@ -34,6 +34,12 @@
   padding-left: 0;
   list-style: none;
 }
+[z] /deep/ h1 {font-size: 2em;}
+[z] /deep/ h2 {font-size: 1.5em;}
+[z] /deep/ h3 {font-size: 1.17em;}
+[z] /deep/ h4 {font-size: 1em;}
+[z] /deep/ h5 {font-size: 0.83em;}
+[z] /deep/ h6 {font-size: 0.67em;}
 </style>
 
 <!--
@@ -5117,22 +5123,55 @@ html /deep/ .column-12 {
     <content></content>
   </template>
 
-<script>Polymer('z-tooltip');</script></polymer-element>
+  <script>
+    Polymer('z-tooltip', {
+      ready: function () {
+        // fixed init-rendering bug
+        var side = this.getAttribute('side');
+        var warning = this.hasAttribute('warning');
+        this.removeAttribute('side');
+        this.removeAttribute('warning');
+        setTimeout(function () {
+          if (side) {
+            this.setAttribute('side', side);
+          }
+          if (warning) {
+            this.setAttribute('warning', '');
+          }
+        }.bind(this));
+      }
+    });
+  </script>
+
+</polymer-element>
 
 </div>
 
 <style>
   z-bar {margin-bottom: 20px;}
+
   section {margin: 0 20px 20px;}
-  section h1 {background-color: #f0f0f0; padding: 15px 10px; border-radius: 3px; margin-left: -10px; margin-right: -10px;}
+  section:not([name="z-typo"]) h1 {background-color: #f0f0f0; padding: 15px 10px; border-radius: 3px; margin-left: -10px; margin-right: -10px;}
+
+  section > div {margin-bottom: 10px;}
+  section > div::before,
+  section > div::after {content: ""; clear: both; display: table;}
+
   section[name="z-icon"] p {max-height: 320px; overflow: auto; padding: 10px 15px; border-radius: 5px; border: 1px #ccc solid;}
   section[name="z-icon"] p span {cursor: pointer; color: #999; width: 240px; display: inline-block;}
   section[name="z-icon"] p z-icon {font-size: 24px; vertical-align: middle;}
   section[name="z-icon"] p span:hover {color: #000;}
   section[name="z-icon"] p span:active {color: #F60;}
-  section > div {margin-bottom: 10px;}
-  section > div::before,
-  section > div::after {content: ""; clear: both; display: table;}
+
+  section[name="z-input"] #form,
+  section[name="z-input"] z-form {width: 320px;}
+  section[name="z-input"] #form z-input-text,
+  section[name="z-input"] #form z-input-select {display: block;}
+
+  section[name="z-rmb"] #rmb-special z-rmb::shadow .integer {font-size: 1.5em;}
+
+  section[name="z-dialog"] z-dialog {width: 320px;}
+  section[name="z-dialog"] z-dialog z-input-text {padding: 15px;}
 </style>
 
 </head>
@@ -5142,6 +5181,85 @@ html /deep/ .column-12 {
   <h1>Zorro</h1>
   <p>Hiding Goods in the Shadow</p>
 </z-bar>
+
+<section>
+  <h1>Typography</h1>
+</section>
+
+<section name="z-typo">
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+  <p>Paragraph</p>
+  <ul>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item
+          <ul>
+              <li>List Item</li>
+              <li>List Item</li>
+              <li>List Item</li>
+              <li>List Item</li>
+          </ul>
+      </li>
+  </ul>
+  <ol>
+      <li>Ordered List Item</li>
+      <li>Ordered List Item</li>
+      <li>Ordered List Item</li>
+      <li>Ordered List Item
+          <ol>
+              <li>Ordered List Item</li>
+              <li>Ordered List Item</li>
+              <li>Ordered List Item</li>
+              <li>Ordered List Item</li>
+          </ol>
+      </li>
+  </ol>
+  <ul unstyled="">
+      <li>Unstyled List Item</li>
+      <li>Unstyled List Item</li>
+      <li>Unstyled List Item</li>
+      <li>Unstyled List Item
+          <ul>
+              <li>List Item</li>
+              <li>List Item</li>
+              <li>List Item</li>
+              <li>List Item</li>
+          </ul>
+      </li>
+  </ul>
+</section>
+
+<section>
+  <h2>&lt;table&gt;</h2>
+  <table>
+    <thead>
+      <tr><th>h1</th><th>h2</th><th>h3</th><th>h4</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>a1</td><td>a2</td><td>a3</td><td>a4</td></tr>
+      <tr><td>b1</td><td>b2</td><td>b3</td><td>b4</td></tr>
+      <tr><td>c1</td><td>c2</td><td>c3</td><td>c4</td></tr>
+      <tr><td>d1</td><td>d2</td><td>d3</td><td>d4</td></tr>
+    </tbody>
+  </table>
+  <table bordered="" striped="" hover="">
+    <thead>
+      <tr><th>h1</th><th>h2</th><th>h3</th><th>h4</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>a1</td><td>a2</td><td>a3</td><td>a4</td></tr>
+      <tr><td>b1</td><td>b2</td><td>b3</td><td>b4</td></tr>
+      <tr><td>c1</td><td>c2</td><td>c3</td><td>c4</td></tr>
+      <tr><td>d1</td><td>d2</td><td>d3</td><td>d4</td></tr>
+    </tbody>
+  </table>
+</section>
 
 <section>
   <h1>Atoms</h1>
@@ -5608,6 +5726,219 @@ html /deep/ .column-12 {
       });
     })(this);
   </script>
+</section>
+
+<section name="z-input">
+  <h2>&lt;z-input&gt;</h2>
+
+  <h3>Oneline Form</h3>
+  <div>
+    <z-form oneline="" style="width: 100%;">
+      <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
+      <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
+      <z-input-space label="">
+        <z-btn>Login</z-btn>
+      </z-input-space>
+    </z-form>
+  </div>
+
+  <h3>Vertical Form</h3>
+  <div>
+    <z-form>
+      <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
+      <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
+      <z-input-space label="">
+        <z-btn>Login</z-btn>
+      </z-input-space>
+    </z-form>
+  </div>
+
+  <h3>Flatten Form</h3>
+  <div>
+    <z-form flatten="">
+      <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
+      <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
+      <z-input-space label="">
+        <z-btn>Login</z-btn>
+      </z-input-space>
+    </z-form>
+  </div>
+
+  <h3>Form Controls</h3>
+  <div id="form">
+    <z-input-text id="test-input" label="&#x59D3;&#x540D;" placeholder="2~4&#x4E2A;&#x6C49;&#x5B57;" value="Nick">extra info ...</z-input-text>
+    <z-input-text label="&#x4E2A;&#x4EBA;&#x4ECB;&#x7ECD;" placeholder="140&#x4E2A;&#x5B57;&#x4EE5;&#x5185;" value="Personal
+Introduction" multi="">extra info ...</z-input-text>
+    <z-input-select flatten="false" name="a" label="Select" value="green">
+      <z-datalist id="test-datalist">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+      </z-datalist>
+      description
+    </z-input-select>
+    <z-input-select flatten="false" name="c" multi="" label="Multiple Select" values="[&quot;female&quot;]">
+      <z-datalist>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </z-datalist>
+      description
+    </z-input-select>
+    <z-input-select flatten="true" name="b" label="Flatten Select" value="option2">
+      <z-datalist>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+        <option value="option5">Option 5</option>
+        <option value="option6">Option 6</option>
+      </z-datalist>
+      description
+    </z-input-select>
+    <z-input-select flatten="true" name="d" multi="" label="Flatten Multiple Select" values="[&quot;option2&quot;]">
+      <z-datalist>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+        <option value="option5">Option 5</option>
+        <option value="option6">Option 6</option>
+      </z-datalist>
+      description
+    </z-input-select>
+  </div>
+</section>
+
+<section name="z-progress">
+  <h2>&lt;z-progress&gt;</h2>
+  <z-progress value="30"></z-progress>
+  <z-progress value="40" status="success"></z-progress>
+  <z-progress value="50" status="info"></z-progress>
+  <z-progress value="60" status="warning"></z-progress>
+  <z-progress value="70" status="danger"></z-progress>
+  <z-progress value="80" striped=""></z-progress>
+  <z-progress value="90" striped="" status="success"></z-progress>
+  <z-progress value="110" striped="" status="info"></z-progress>
+  <z-progress value="-20" striped="" status="warning"></z-progress>
+  <z-progress value="20" striped="" status="warning"></z-progress>
+  <z-progress value="30" striped="" status="danger"></z-progress>
+  <z-progress value="40" striped="" active=""></z-progress>
+  <z-progress value="50" striped="" active="" status="success"></z-progress>
+  <z-progress value="60" striped="" active="" status="info"></z-progress>
+  <z-progress value="70" striped="" active="" status="warning"></z-progress>
+  <z-progress value="80" striped="" active="" status="danger"></z-progress>
+  <z-progress value="asdf" striped="" active="" status="danger"></z-progress>
+</section>
+
+<section name="z-rmb">
+  <h2>&lt;z-rmb&gt;</h2>
+  <div>
+    <z-rmb value="100"></z-rmb> /
+    <z-rmb front="&#xFFE5;" value="100"></z-rmb> /
+    <z-rmb front="" end="&#x5143;" value="100"></z-rmb> /
+    <z-rmb showfraction="false" value="100"></z-rmb> /
+    <z-rmb del="" showfraction="false" value="100.50"></z-rmb>
+  </div>
+  <div id="rmb-special">
+      <z-rmb showfraction="true" value="100"></z-rmb> /
+      <z-rmb del="" showfraction="true" value="100.50"></z-rmb> /
+      <z-rmb showfraction="auto" value="100"></z-rmb> /
+      <z-rmb showfraction="auto" value="100.50"></z-rmb> /
+      <z-rmb del="" value="100"></z-rmb>
+  </div>
+</section>
+
+<section name="z-tag">
+  <h2>&lt;z-tag&gt;</h2>
+  <div>
+    tags:
+    <z-tag primary="">html</z-tag>
+    <z-tag>css</z-tag>
+    <z-tag>javascript</z-tag>
+    <z-tag></z-tag>
+    badges:
+    <z-tag badge="" primary="">100</z-tag>
+    <z-tag badge="">10</z-tag>
+  </div>
+</section>
+
+<section name="z-time">
+  <h2>&lt;z-time&gt;</h2>
+  <div>
+    <z-time-relative datetime="2014-04-01T16:30:00-08:00">
+    </z-time-relative> /
+    <z-time-ago datetime="2012-04-01T16:30:00-08:00">
+    </z-time-ago> /
+    <z-time-ago datetime="2012-04-01T16:30:00-08:00" format="micro">
+    </z-time-ago> /
+    <z-time-local datetime="2014-04-01T16:30:00-08:00" month="short" day="numeric" year="numeric" hour="numeric" minute="numeric">
+    </z-time-local>
+  </div>
+</section>
+
+<section name="z-note">
+  <h2>&lt;z-note&gt;</h2>
+  <z-note>Normal note</z-note>
+  <z-note status="success">Success note</z-note>
+  <z-note status="warning">Warning note</z-note>
+  <z-note status="danger">Danger note</z-note>
+</section>
+
+<section name="z-phone">
+  <h2>&lt;z-phone&gt;</h2>
+  <div>
+    <z-phone bgimg="//img.alicdn.com/tps/i3/TB1z8_ZHXXXXXbrXVXXKptRJVXX-360-665.png" innerwidth="240">
+      <div style="background: silver; height: 800px;">Hello World</div>
+    </z-phone>
+  </div>
+  <div>
+    <z-phone size="{&apos;width&apos;: 374, &apos;height&apos;: 777, &apos;top&apos;: 102, &apos;bottom&apos;: 102, &apos;side&apos;: 27}" bgimg="//img.alicdn.com/tps/i3/TB1Wr66HXXXXXaBXXXXlu5hPVXX-373-777.png" innerwidth="240">
+        <div style="background: silver; height: 800px;">Hello World</div>
+    </z-phone>
+  </div>
+</section>
+
+<section name="z-dialog">
+  <h2>&lt;z-dialog&gt;</h2>
+  <div>
+    <z-dialog label="Link URL" confirmlabel="Save" unconfirmlabel="Cancel">
+      <z-input-text label="Please Input a URL:" data-source="" value="http://">
+    </z-input-text></z-dialog>
+  </div>
+</section>
+
+<section name="z-tooltip">
+  <h2>&lt;z-tooltip&gt;</h2>
+  <div>
+    <z-tooltip>
+      Tooltip
+    </z-tooltip>
+  </div>
+  <h3>Tooltip with Title</h3>
+  <div>
+    <z-tooltip>
+      <p type="title">Title</p>
+      Lorem ipsum dolor sit amet,<br>
+      consectetur adipiscing elit
+    </z-tooltip>
+  </div>
+  <h3>Title with Arrow</h3>
+  <div>
+    <z-tooltip side="top">
+      Tooltip on the top
+    </z-tooltip>
+    <z-tooltip side="left">
+      Tooltip on the left
+    </z-tooltip>
+  </div>
+  <h3>Tooltip beside element</h3>
+  <div>
+    <z-btn style="position: relative;">
+        Button
+        <z-tooltip side="right" style="position: absolute; left: 100%; top: 50%; -webkit-transform: translateY(-50%); margin-left: 10px; width: 120px;">
+          Tooltip
+        </z-tooltip>
+    </z-btn>
+  </div>
 </section>
 
 </body>
