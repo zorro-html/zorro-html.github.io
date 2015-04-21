@@ -584,6 +584,16 @@
             e.preventDefault();
             e.stopPropagation();
             e.stopImmediatePropagation();
+            return;
+          }
+          var href = this.getAttribute('href');
+          if (href) {
+            if (this.getAttribute('target') === '_blank') {
+              open(href);
+            }
+            else {
+              location.href = href;
+            }
           }
         });
       }
@@ -5150,11 +5160,23 @@ html /deep/ .column-12 {
   z-bar {margin-bottom: 20px;}
 
   section {margin: 0 20px 20px;}
-  section:not([name="z-typo"]) h1 {background-color: #f0f0f0; padding: 15px 10px; border-radius: 3px; margin-left: -10px; margin-right: -10px;}
+  section:not([name="z-typo"]) > h1 {background-color: #f0f0f0; padding: 15px 10px; border-radius: 3px; margin-left: -10px; margin-right: -10px;}
 
   section > div {margin-bottom: 10px;}
   section > div::before,
   section > div::after {content: ""; clear: both; display: table;}
+
+  section[name="z-grid"] > div .column {background: #eee; border: 1px solid #ccc; border-radius: 4px; color: #777; padding: 5px; min-height: 30px; text-align: center;}
+  section[name="z-grid"] > div .row {margin-bottom: 10px;}
+  section[name="z-grid"] > div .row:last-child {margin-bottom: 0;}
+  section[name="z-grid"] > div .column .column {color: #eee; background: #333; border-color: #000;}
+
+  section[name="z-dock"] z-dock {width: 200px; height: 200px; margin-bottom: 30px;}
+  section[name="z-dock"] z-dock-top,
+  section[name="z-dock"] z-dock-bottom {height: 30px; background: #ccc;}
+  section[name="z-dock"] z-dock-left,
+  section[name="z-dock"] z-dock-right {width: 30px; background: #ddd;}
+  section[name="z-dock"] z-dock-main {background: #eee;}
 
   section[name="z-icon"] p {max-height: 320px; overflow: auto; padding: 10px 15px; border-radius: 5px; border: 1px #ccc solid;}
   section[name="z-icon"] p span {cursor: pointer; color: #999; width: 240px; display: inline-block;}
@@ -5179,6 +5201,12 @@ html /deep/ .column-12 {
 <z-bar>
   <h1>Zorro</h1>
   <p>Hiding Goods in the Shadow</p>
+  <z-bar-minor>
+    Dev by @&#x52FE;&#x4E09;&#x80A1;&#x56DB; |
+    <a target="_blank" href="http://weibo.com/mx006">Weibo</a> |
+    <a target="_blank" href="https://github.com/Jinjiang">Github</a> |
+    <a target="_blank" href="http://jiongks.name/">Blog</a>
+  </z-bar-minor>
 </z-bar>
 
 <section>
@@ -5258,6 +5286,125 @@ html /deep/ .column-12 {
       <tr><td>d1</td><td>d2</td><td>d3</td><td>d4</td></tr>
     </tbody>
   </table>
+</section>
+
+<section>
+  <h1>Layout</h1>
+</section>
+
+<section name="z-grid">
+  <h2>Grid System</h2>
+  <div style="width: 480px;">
+      <div class="row">
+          <div class="column column-4"></div>
+          <div class="column column-4"></div>
+          <div class="column column-4"></div>
+      </div>
+      <div class="row">
+          <div class="column column-2"></div>
+          <div class="column column-4"></div>
+          <div class="column column-4"></div>
+          <div class="column column-2"></div>
+      </div>
+      <div class="row">
+          <div class="column column-5"></div>
+          <div class="column column-7"></div>
+      </div>
+      <div class="row">
+          <div class="column column-6">
+              <div class="row">
+                  <div class="column column-6"></div>
+                  <div class="column column-6"></div>
+              </div>
+              <div class="row">
+                  <div class="column column-3"></div>
+                  <div class="column column-3"></div>
+                  <div class="column column-3"></div>
+                  <div class="column column-3"></div>
+              </div>
+              <div class="row">
+                  <div class="column column-4"></div>
+                  <div class="column column-4"></div>
+                  <div class="column column-4"></div>
+              </div>
+          </div>
+          <div class="column column-6">
+              <div class="row">
+                  <div class="column column-7"></div>
+                  <div class="column column-3"></div>
+                  <div class="column column-2"></div>
+              </div>
+              <div class="row">
+                  <div class="column column-2"></div>
+                  <div class="column column-2"></div>
+                  <div class="column column-4"></div>
+                  <div class="column column-2"></div>
+                  <div class="column column-2"></div>
+              </div>
+              <div class="row">
+                  <div class="column column-9"></div>
+                  <div class="column column-3"></div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="column column-8"></div>
+          <div class="column column-4"></div>
+      </div>
+      <div class="row">
+          <div class="column column-1"></div>
+          <div class="column column-3"></div>
+          <div class="column column-4"></div>
+          <div class="column column-3"></div>
+          <div class="column column-1"></div>
+      </div>
+      <div class="row">
+          <div class="column column-3"></div>
+          <div class="column column-3"></div>
+          <div class="column column-3"></div>
+          <div class="column column-3"></div>
+      </div>
+      <div class="row">
+          <div class="column column-12"></div>
+      </div>
+  </div>
+
+</section>
+
+<section name="z-dock">
+  <h2>&lt;z-dock&gt;</h2>
+  <z-dock>
+    <z-dock-top></z-dock-top>
+    <z-dock-left></z-dock-left>
+    <z-dock-main></z-dock-main>
+  </z-dock>
+  <z-dock>
+    <z-dock-top></z-dock-top>
+    <z-dock-right></z-dock-right>
+    <z-dock-bottom></z-dock-bottom>
+    <z-dock-main></z-dock-main>
+  </z-dock>
+  <z-dock>
+    <z-dock-top></z-dock-top>
+    <z-dock-left></z-dock-left>
+    <z-dock-right></z-dock-right>
+    <z-dock-bottom></z-dock-bottom>
+    <z-dock-main></z-dock-main>
+  </z-dock>
+</section>
+
+<section name="z-bar">
+  <h2>&lt;z-bar&gt;</h2>
+  <div>
+    <z-bar>
+      <h1>Hello World</h1>
+      <z-bar-minor>
+        <z-btn>login</z-btn>
+        <z-btn>help</z-btn>
+        <z-btn>feedback</z-btn>
+      </z-bar-minor>
+    </z-bar>
+  </div>
 </section>
 
 <section>
