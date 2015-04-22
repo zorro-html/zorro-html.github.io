@@ -5170,9 +5170,11 @@ html /deep/ .column-12 {
 </div>
 
 <style>
-  z-bar {margin-bottom: 20px;}
+  html[z] body {margin-top: 120px;}
 
-  section {margin: 0 20px 20px;}
+  body > z-bar {position: fixed; top: 0; left: 0; right: 0; z-index: 100;}
+
+  section {max-width: 800px; margin: 0 auto 20px;}
   section:not([name="z-typo"]) > h1 {background-color: #f0f0f0; background-image: url(logo/logo_64x64.png); background-size: 32px 32px; background-repeat: no-repeat; background-position: 20px center; padding: 15px 10px 15px 60px; border-radius: 3px; margin-left: -10px; margin-right: -10px;}
 
   section > div {margin-bottom: 10px;}
@@ -6121,6 +6123,16 @@ Introduction" multi="">extra info ...</z-input-text>
         </z-tooltip>
     </z-btn>
   </div>
+</section>
+
+<section style="margin-top: 200px; margin-bottom: 80px;">
+  <hr>
+  <p>
+    Zorro: Dev by @&#x52FE;&#x4E09;&#x80A1;&#x56DB; |
+    <a target="_blank" href="http://weibo.com/mx006">Weibo</a> |
+    <a target="_blank" href="https://github.com/Jinjiang">Github</a> |
+    <a target="_blank" href="http://jiongks.name/">Blog</a>
+  </p>
 </section>
 
 </body>
