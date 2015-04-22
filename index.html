@@ -7,6 +7,19 @@
 
 <title>Zorro - Hiding Goods in the Shadow</title>
 
+<link rel="icon" href="logo/z_16x16.png">
+<link rel="apple-touch-icon" href="logo/z.png">
+<link rel="apple-touch-icon" sizes="64x64" href="logo/logo_64x64.png">
+<link rel="apple-touch-icon" sizes="128x128" href="logo/logo_128x128.png">
+<link rel="apple-touch-icon" sizes="512x512" href="logo/logo_512x512.png">
+
+<style>
+  @font-face {font-family: 'Russo One'; font-style: normal; font-weight: 400; src: local('Russo One'), local('RussoOne-Regular'), url(fonts/RussoOne.woff2) format('woff2');}
+  @font-face {font-family: 'Play'; font-style: normal; font-weight: 400; src: local('Play'), url(fonts/Play.woff2) format('woff2');}
+  body {font-family: 'Play', sans-serif;}
+  h1 {font-family: 'Russo One', sans-serif;}
+</style>
+
 <script src="//g.alicdn.com/mtb/lib-3rd/webcomponentsjs/webcomponents.js"></script>
 <div hidden><style>
 [z] {
@@ -5160,7 +5173,7 @@ html /deep/ .column-12 {
   z-bar {margin-bottom: 20px;}
 
   section {margin: 0 20px 20px;}
-  section:not([name="z-typo"]) > h1 {background-color: #f0f0f0; padding: 15px 10px; border-radius: 3px; margin-left: -10px; margin-right: -10px;}
+  section:not([name="z-typo"]) > h1 {background-color: #f0f0f0; background-image: url(logo/logo_64x64.png); background-size: 32px 32px; background-repeat: no-repeat; background-position: 20px center; padding: 15px 10px 15px 60px; border-radius: 3px; margin-left: -10px; margin-right: -10px;}
 
   section > div {margin-bottom: 10px;}
   section > div::before,
@@ -5199,8 +5212,15 @@ html /deep/ .column-12 {
 <body>
 
 <z-bar>
-  <h1>Zorro</h1>
-  <p>Hiding Goods in the Shadow</p>
+  <div layout horizontal start>
+    <div style="margin-right: 15px;">
+      <img src="logo/z_64x64.png">
+    </div>
+    <div flex>
+      <h1 style="margin: 0;">Zorro</h1>
+      <p>Hiding Goods in the Shadow</p>
+    </div>
+  </div>
   <z-bar-minor>
     Dev by @&#x52FE;&#x4E09;&#x80A1;&#x56DB; |
     <a target="_blank" href="http://weibo.com/mx006">Weibo</a> |
@@ -5208,6 +5228,10 @@ html /deep/ .column-12 {
     <a target="_blank" href="http://jiongks.name/">Blog</a>
   </z-bar-minor>
 </z-bar>
+
+<section>
+  <p>All the components in Zorro. All of these could be used just by directly write a simple <code>&lt;z-*&gt;</code> tag.</p>
+</section>
 
 <section>
   <h1>Typography</h1>
@@ -5289,7 +5313,7 @@ html /deep/ .column-12 {
 </section>
 
 <section>
-  <h1>Layout</h1>
+  <h1>Layout &amp; Container</h1>
 </section>
 
 <section name="z-grid">
@@ -5404,6 +5428,20 @@ html /deep/ .column-12 {
         <z-btn>feedback</z-btn>
       </z-bar-minor>
     </z-bar>
+  </div>
+</section>
+
+<section name="z-phone">
+  <h2>&lt;z-phone&gt;</h2>
+  <div>
+    <z-phone bgimg="//img.alicdn.com/tps/i3/TB1z8_ZHXXXXXbrXVXXKptRJVXX-360-665.png" innerwidth="240">
+      <div style="background: silver; height: 800px;">Hello World</div>
+    </z-phone>
+  </div>
+  <div>
+    <z-phone size="{&apos;width&apos;: 374, &apos;height&apos;: 777, &apos;top&apos;: 102, &apos;bottom&apos;: 102, &apos;side&apos;: 27}" bgimg="//img.alicdn.com/tps/i3/TB1Wr66HXXXXXaBXXXXlu5hPVXX-373-777.png" innerwidth="240">
+        <div style="background: silver; height: 800px;">Hello World</div>
+    </z-phone>
   </div>
 </section>
 
@@ -5874,6 +5912,10 @@ html /deep/ .column-12 {
   </script>
 </section>
 
+<section>
+  <h1>Form &amp; Control</h1>
+</section>
+
 <section name="z-input">
   <h2>&lt;z-input&gt;</h2>
 
@@ -5912,8 +5954,8 @@ html /deep/ .column-12 {
 
   <h3>Form Controls</h3>
   <div id="form">
-    <z-input-text id="test-input" label="&#x59D3;&#x540D;" placeholder="2~4&#x4E2A;&#x6C49;&#x5B57;" value="Nick">extra info ...</z-input-text>
-    <z-input-text label="&#x4E2A;&#x4EBA;&#x4ECB;&#x7ECD;" placeholder="140&#x4E2A;&#x5B57;&#x4EE5;&#x5185;" value="Personal
+    <z-input-text id="test-input" label="Nickname" placeholder="2~16 characters" value="Nick">extra info ...</z-input-text>
+    <z-input-text label="Personal Description" placeholder="less than 140 letters" value="Personal
 Introduction" multi="">extra info ...</z-input-text>
     <z-input-select flatten="false" name="a" label="Select" value="green">
       <z-datalist id="test-datalist">
@@ -5975,6 +6017,10 @@ Introduction" multi="">extra info ...</z-input-text>
   <z-progress value="asdf" striped="" active="" status="danger"></z-progress>
 </section>
 
+<section>
+  <h1>Misc</h1>
+</section>
+
 <section name="z-rmb">
   <h2>&lt;z-rmb&gt;</h2>
   <div>
@@ -6029,18 +6075,8 @@ Introduction" multi="">extra info ...</z-input-text>
   <z-note status="danger">Danger note</z-note>
 </section>
 
-<section name="z-phone">
-  <h2>&lt;z-phone&gt;</h2>
-  <div>
-    <z-phone bgimg="//img.alicdn.com/tps/i3/TB1z8_ZHXXXXXbrXVXXKptRJVXX-360-665.png" innerwidth="240">
-      <div style="background: silver; height: 800px;">Hello World</div>
-    </z-phone>
-  </div>
-  <div>
-    <z-phone size="{&apos;width&apos;: 374, &apos;height&apos;: 777, &apos;top&apos;: 102, &apos;bottom&apos;: 102, &apos;side&apos;: 27}" bgimg="//img.alicdn.com/tps/i3/TB1Wr66HXXXXXaBXXXXlu5hPVXX-373-777.png" innerwidth="240">
-        <div style="background: silver; height: 800px;">Hello World</div>
-    </z-phone>
-  </div>
+<section>
+  <h1>Layers</h1>
 </section>
 
 <section name="z-dialog">

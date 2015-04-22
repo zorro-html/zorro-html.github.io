@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zorro</title>
+
+  <link rel="icon" href="logo/z_16x16.png">
+  <link rel="apple-touch-icon" href="logo/z.png">
+  <link rel="apple-touch-icon" sizes="64x64" href="logo/logo_64x64.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="logo/logo_128x128.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="logo/logo_512x512.png">
+
+  <link rel="import" href="../jie/jie-icon/jie-icon.html">
+  <link rel="import" href="../jie/jie-dropdown/jie-dropdown.html">
+  <link rel="import" href="../jie/jie-pagination/jie-pagination.html">
+  <link rel="import" href="../jie/jie-nav/jie-nav.html">
+  <style>
+    @font-face {font-family: 'Russo One'; font-style: normal; font-weight: 400; src: local('Russo One'), local('RussoOne-Regular'), url(fonts/RussoOne.woff2) format('woff2');}
+    @font-face {font-family: 'Play'; font-style: normal; font-weight: 400; src: local('Play'), url(fonts/Play.woff2) format('woff2');}
+    body {font-family: 'Play', sans-serif;}
+    h1 {font-family: 'Russo One', sans-serif;}
+    h1 {font-size: 64px; line-height: 64px;}
+    h1 > img {vertical-align: top; margin-top: -3px;}
+    h2 {font-size: 32px; line-height: 32px;}
+    h2 > img {vertical-align: middle;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><img src="logo/z_64x64.png"> Zorro</h1>
+</header>
+
+<h2><img src="logo/logo_64x64.png" width="32" height="32"> z-pagination</h2>
+<jie-pagination max="9"></jie-pagination>
+
+<h2><img src="logo/logo_64x64.png" width="32" height="32"> z-btn-group radio</h2>
+
+<jie-btn-group radio>
+  <jie-btn>Button</jie-btn>
+  <jie-btn>Button</jie-btn>
+  <jie-btn>Button</jie-btn>
+</jie-btn-group>
+
+<h2><img src="logo/logo_64x64.png" width="32" height="32"> z-btn-group multi</h2>
+
+<jie-btn-group multi>
+  <jie-btn>Button</jie-btn>
+  <jie-btn>Button</jie-btn>
+  <jie-btn>Button</jie-btn>
+</jie-btn-group>
+
+<h2><img src="logo/logo_64x64.png" width="32" height="32"> z-tabnav</h2>
+
+<jie-tabnav>
+  <li name="item1" active>ITEM 1</li>
+  <li name="item2">ITEM 2</li>
+  <li name="item3">ITEM 3</li>
+</jie-tabnav>
+
+<h2><img src="logo/logo_64x64.png" width="32" height="32"> z-pillnav</h2>
+
+<jie-pillnav selected="1">
+  <li name="item1">ITEM 1</li>
+  <li name="item2">ITEM 2</li>
+  <li name="item3">ITEM 3</li>
+</jie-pillnav>
+
+<h2><img src="logo/logo_64x64.png" width="32" height="32"> z-linenav</h2>
+
+<jie-linenav>
+  <li name="item1">ITEM 1</li>
+  <li name="item2">ITEM 2</li>
+  <li name="item3" active>ITEM 3</li>
+</jie-linenav>
+
+</body>
+</html>
