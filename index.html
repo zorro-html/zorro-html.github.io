@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" sizes="512x512" href="logo/logo_512x512.png">
 
 <script src="//g.alicdn.com/mtb/lib-3rd/webcomponentsjs/webcomponents.js"></script>
-<div hidden><style>
+<div hidden><style shim-shadowdom="">
 [z] {
   font-size: 14px;
   line-height: 1.42857143;
@@ -74,7 +74,7 @@
   ```
 -->
 
-<style>
+<style shim-shadowdom="">
 [z] /deep/ table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -166,7 +166,7 @@
   }
 </style>
 
-<polymer-element name="z-icon" attributes="name" assetpath="z-icon/">
+<polymer-element name="z-icon" attributes="name" assetpath="../z-icon/">
 
   <template><style>
       .icon {
@@ -428,7 +428,7 @@
 
 
 
-<polymer-element name="z-btn" attributes="" assetpath="z-btn/">
+<polymer-element name="z-btn" attributes="" assetpath="../z-btn/">
 
   <template>
     <style>
@@ -640,7 +640,7 @@
 
 
 
-<polymer-element name="z-menu" attributes="" assetpath="z-menu/">
+<polymer-element name="z-menu" attributes="" assetpath="../z-menu/">
 
   <template>
     <style>
@@ -778,7 +778,7 @@
 
 
 
-<polymer-element name="z-mask" attributes="shown" assetpath="z-mask/">
+<polymer-element name="z-mask" attributes="shown" assetpath="../z-mask/">
 
   <template>
     <style>
@@ -822,7 +822,7 @@
 </polymer-element>
 
 
-<polymer-element name="z-dropdown" attributes="" assetpath="z-dropdown/">
+<polymer-element name="z-dropdown" attributes="" assetpath="../z-dropdown/">
 
   <template>
     <style>
@@ -1100,7 +1100,7 @@ contains the selection state.
 -->
 
 
-<polymer-element name="core-selection" attributes="multi" hidden assetpath="core-selection/">
+<polymer-element name="core-selection" attributes="multi" hidden assetpath="../core-selection/">
   <script>
     Polymer('core-selection', {
       /**
@@ -1177,7 +1177,7 @@ contains the selection state.
 </polymer-element>
 
 
-<polymer-element name="core-selector" attributes="selected multi valueattr selectedClass selectedProperty selectedAttribute selectedItem selectedModel selectedIndex notap excludedLocalNames target itemsSelector activateEvent" assetpath="core-selector/">
+<polymer-element name="core-selector" attributes="selected multi valueattr selectedClass selectedProperty selectedAttribute selectedItem selectedModel selectedIndex notap excludedLocalNames target itemsSelector activateEvent" assetpath="../core-selector/">
 
   <template>
     <core-selection id="selection" multi="{{multi}}" on-core-select="{{selectionSelect}}"></core-selection>
@@ -1660,7 +1660,7 @@ contains the selection state.
 
 
 
-<polymer-element name="z-btn-group" extends="core-selector" attributes="radio" selectedclass="" assetpath="z-btn-group/">
+<polymer-element name="z-btn-group" extends="core-selector" attributes="radio" selectedclass="" assetpath="../z-btn-group/">
 
   <template>
     <style>
@@ -1788,7 +1788,7 @@ contains the selection state.
 
 
 
-<polymer-element name="z-nav" extends="core-selector" selectedclass="" assetpath="z-nav/">
+<polymer-element name="z-nav" extends="core-selector" selectedclass="" assetpath="../z-nav/">
 
   <template>
     <style>
@@ -1816,7 +1816,7 @@ contains the selection state.
 </polymer-element>
 
 
-<polymer-element name="z-tabnav" extends="z-nav" assetpath="z-nav/">
+<polymer-element name="z-tabnav" extends="z-nav" assetpath="../z-nav/">
 
   <template>
     <style>
@@ -1868,7 +1868,7 @@ contains the selection state.
 
 
 
-<polymer-element name="z-pillnav" extends="z-nav" assetpath="z-nav/">
+<polymer-element name="z-pillnav" extends="z-nav" assetpath="../z-nav/">
 
   <template>
     <style>
@@ -1918,7 +1918,7 @@ contains the selection state.
 
 
 
-<polymer-element name="z-linenav" extends="z-nav" assetpath="z-nav/">
+<polymer-element name="z-linenav" extends="z-nav" assetpath="../z-nav/">
 
   <template>
     <style>
@@ -2068,7 +2068,7 @@ html /deep/ .core-collapse-closed {
 }
 </style>
 
-<polymer-element name="core-collapse" attributes="target horizontal opened duration fixedSize allowOverflow" assetpath="core-collapse/">
+<polymer-element name="core-collapse" attributes="target horizontal opened duration fixedSize allowOverflow" assetpath="../core-collapse/">
 <template>
 
   <content></content>
@@ -2318,7 +2318,7 @@ html /deep/ .core-collapse-closed {
 </polymer-element>
 
 
-<polymer-element name="z-panel" attributes="collapsed" assetpath="z-panel/">
+<polymer-element name="z-panel" attributes="collapsed" assetpath="../z-panel/">
 
   <template>
     <style>
@@ -2458,7 +2458,7 @@ html /deep/ .core-collapse-closed {
 
 
 
-<polymer-element name="z-breadcrumb" attributes="path, autoupdate" assetpath="z-breadcrumb/">
+<polymer-element name="z-breadcrumb" attributes="path, autoupdate" assetpath="../z-breadcrumb/">
 
   <template>
     <style>
@@ -2572,7 +2572,7 @@ html /deep/ .core-collapse-closed {
 
 
 
-<polymer-element name="z-pagination" attributes="value, min, max, range, siderange" assetpath="z-pagination/">
+<polymer-element name="z-pagination" attributes="value, min, max, range, siderange" assetpath="../z-pagination/">
 
   <template>
     <style>
@@ -2814,17 +2814,15 @@ html /deep/ .core-collapse-closed {
 
 
 
-<polymer-element name="z-dock" attributes="" layout="" vertical="" assetpath="z-dock/">
+<polymer-element name="z-dock" attributes="" layout="" vertical="" assetpath="../z-dock/">
 
   <template>
     <content select="z-dock-top"></content>
     <div flex="" layout="" horizontal="">
       <content select="z-dock-left"></content>
       <div flex="" layout="" vertical="">
-        <!-- <div> -->
-          <content select="z-dock-main"></content>
-          <content select="z-dock-bottom"></content>
-        <!-- </div> -->
+        <content select="z-dock-main"></content>
+        <content select="z-dock-bottom"></content>
       </div>
       <content select="z-dock-right"></content>
     </div>
@@ -2832,24 +2830,24 @@ html /deep/ .core-collapse-closed {
 
 <script>Polymer('z-dock');</script></polymer-element>
 
-<polymer-element name="z-dock-area" attributes="" layout="" assetpath="z-dock/">
+<polymer-element name="z-dock-area" attributes="" layout="" assetpath="../z-dock/">
   <template><content></content></template>
 <script>Polymer('z-dock-area');</script></polymer-element>
 
-<polymer-element name="z-dock-top" attributes="" extends="z-dock-area" assetpath="z-dock/">
+<polymer-element name="z-dock-top" attributes="" extends="z-dock-area" assetpath="../z-dock/">
   <template><shadow></shadow></template>
 <script>Polymer('z-dock-top');</script></polymer-element>
-<polymer-element name="z-dock-left" attributes="" extends="z-dock-area" assetpath="z-dock/">
+<polymer-element name="z-dock-left" attributes="" extends="z-dock-area" assetpath="../z-dock/">
   <template><shadow></shadow></template>
 <script>Polymer('z-dock-left');</script></polymer-element>
-<polymer-element name="z-dock-right" attributes="" extends="z-dock-area" assetpath="z-dock/">
+<polymer-element name="z-dock-right" attributes="" extends="z-dock-area" assetpath="../z-dock/">
   <template><shadow></shadow></template>
 <script>Polymer('z-dock-right');</script></polymer-element>
-<polymer-element name="z-dock-bottom" attributes="" extends="z-dock-area" assetpath="z-dock/">
+<polymer-element name="z-dock-bottom" attributes="" extends="z-dock-area" assetpath="../z-dock/">
   <template><shadow></shadow></template>
 <script>Polymer('z-dock-bottom');</script></polymer-element>
 
-<polymer-element name="z-dock-main" attributes="" extends="z-dock-area" flex="" assetpath="z-dock/">
+<polymer-element name="z-dock-main" attributes="" extends="z-dock-area" flex="" assetpath="../z-dock/">
   <template><shadow></shadow></template>
 <script>Polymer('z-dock-main');</script></polymer-element>
 
@@ -2860,7 +2858,7 @@ http://www.sitepoint.com/understanding-css-grid-systems/
 
 -->
 
-<style>
+<style shim-shadowdom="">
 /*------------------------------*\
     Grid System
 \*------------------------------*/
@@ -2938,8 +2936,8 @@ html /deep/ .column-12 {
     width: 100%;
     margin-left: 0;
 }
-/style>
 </style>
+
 <!--
   # bar
 
@@ -2967,23 +2965,23 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-bar-minor" attributes="" assetpath="z-bar/">
-  <template><content></content></template>
+<polymer-element name="z-bar-minor" attributes="" assetpath="../z-bar/">
+  <template><style>:host{display: block;}</style><content></content></template>
 <script>Polymer('z-bar-minor');</script></polymer-element>
 
-<polymer-element name="z-bar" attributes="" assetpath="z-bar/">
+<polymer-element name="z-bar" attributes="" assetpath="../z-bar/">
 
   <template>
     <style>
       :host {display: block;}
       :host > z-dock {background-color: #f5f5f5; border-bottom: 1px solid #f60; padding: 10px 15px;}
-      :host > z-dock::shadow > div {flex: auto; align-items: center;}
+      :host > z-dock::shadow > div[flex] {-webkit-flex: 1; flex: auto; -webkit-align-items: center; align-items: center;}
     </style>
     <z-dock>
       <z-dock-right>
         <content select="z-bar-minor"></content>
       </z-dock-right>
-      <z-dock-main style="flex: auto;">
+      <z-dock-main style="-webkit-flex: auto; flex: auto;">
         <content></content>
       </z-dock-main>
     </z-dock>
@@ -3022,7 +3020,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-input-text" attributes="multi, rows, type, value, name, placeholder, label" assetpath="z-input/">
+<polymer-element name="z-input-text" attributes="multi, rows, type, value, name, placeholder, label" assetpath="../z-input/">
   <template>
     <style>
       :host {
@@ -3163,7 +3161,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-input-select" attributes="multi, flatten, value, values, label, name" assetpath="z-input/">
+<polymer-element name="z-input-select" attributes="multi, flatten, value, values, label, name" assetpath="../z-input/">
   <template>
     <!-- <link rel="stylesheet" type="text/css" href="//g.alicdn.com/mtb/lib-bootstrap/3.0.4/bootstrap.css"> -->
     <style>
@@ -3432,7 +3430,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-input-space" attributes="" assetpath="z-input/">
+<polymer-element name="z-input-space" attributes="" assetpath="../z-input/">
   <template>
     <style>
       :host {
@@ -3480,7 +3478,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-form" attributes="" assetpath="z-input/">
+<polymer-element name="z-form" attributes="" assetpath="../z-input/">
   <template>
     <style>
       :host {display: block;}
@@ -3558,7 +3556,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-datalist" attributes="" assetpath="z-input/">
+<polymer-element name="z-datalist" attributes="" assetpath="../z-input/">
   <template>
     <style>:host {display: none;}</style>
     <content></content>
@@ -3627,7 +3625,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-progress" attributes="value, status, active, striped" assetpath="z-progress/">
+<polymer-element name="z-progress" attributes="value, status, active, striped" assetpath="../z-progress/">
 
   <template>
     <style>
@@ -3857,7 +3855,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-rmb" attributes="value, front, end, showfraction" assetpath="z-rmb/">
+<polymer-element name="z-rmb" attributes="value, front, end, showfraction" assetpath="../z-rmb/">
 
   <template><style>
       :host {display: inline-block; position: relative;}
@@ -3965,7 +3963,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-tag" attributes="" assetpath="z-tag/">
+<polymer-element name="z-tag" attributes="" assetpath="../z-tag/">
 
   <template><style>
       :host {
@@ -4047,7 +4045,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-time" attributes="" assetpath="z-time/">
+<polymer-element name="z-time" attributes="" assetpath="../z-time/">
   <template><content></content></template>
 <script>Polymer('z-time');</script></polymer-element>
 
@@ -4599,7 +4597,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-note" attributes="status" assetpath="z-note/">
+<polymer-element name="z-note" attributes="status" assetpath="../z-note/">
   <template>
     <style>
       :host {display: block; padding: 8px 10px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 2px; font-size: 12px;}
@@ -4691,7 +4689,7 @@ html /deep/ .column-12 {
 </script>
 
 
-<polymer-element name="z-phone" attributes="innerwidth, size, bgimg" assetpath="z-phone/">
+<polymer-element name="z-phone" attributes="innerwidth, size, bgimg" assetpath="../z-phone/">
 
   <template>
     <style>
@@ -4787,7 +4785,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-dialog" attributes="label, confirmlabel, unconfirmlabel" layout="" vertical="" assetpath="z-dialog/">
+<polymer-element name="z-dialog" attributes="label, confirmlabel, unconfirmlabel" layout="" vertical="" assetpath="../z-dialog/">
 
   <template>
     <style>
@@ -5095,7 +5093,7 @@ html /deep/ .column-12 {
 
 
 
-<polymer-element name="z-tooltip" attributes="" assetpath="z-tooltip/">
+<polymer-element name="z-tooltip" attributes="" assetpath="../z-tooltip/">
 
   <template>
     <style>
