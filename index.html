@@ -3195,6 +3195,7 @@ html /deep/ .column-12 {
         float: left;
         margin-left: -20px;
         -webkit-appearance: none;
+        border: none;
         margin: 4px 4px 0;
         margin-top: 1px \9;
         line-height: normal;
@@ -3589,7 +3590,11 @@ html /deep/ .column-12 {
           this.value = [];
           this.readOptions();
 
-          this.addEventListener('DOMSubtreeModified', this.readOptions.bind(this));
+          var observer = new MutationObserver(this.readOptions.bind(this));
+          var config = { attributes: false, childList: true, characterData: true, subtree: true };
+          observer.observe(this, config);
+
+          // this.addEventListener('DOMSubtreeModified', this.readOptions.bind(this));
         }
       });
   </script>
