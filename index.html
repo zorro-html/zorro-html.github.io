@@ -5197,10 +5197,10 @@ html /deep/ .column-12 {
   section[name="z-dock"] z-dock-main {background: #eee;}
 
   section[name="z-icon"] p {max-height: 320px; overflow: auto; padding: 10px 15px; border-radius: 5px; border: 1px #ccc solid;}
-  section[name="z-icon"] p span {cursor: pointer; color: #999; width: 240px; display: inline-block;}
+  section[name="z-icon"] p > span {cursor: pointer; color: #999; width: 240px; display: inline-block;}
+  section[name="z-icon"] p > span:hover {color: #000;}
+  section[name="z-icon"] p > span:active {color: #F60;}
   section[name="z-icon"] p z-icon {font-size: 24px; vertical-align: middle;}
-  section[name="z-icon"] p span:hover {color: #000;}
-  section[name="z-icon"] p span:active {color: #F60;}
 
   section[name="z-input"] #form,
   section[name="z-input"] z-form {width: 320px;}
