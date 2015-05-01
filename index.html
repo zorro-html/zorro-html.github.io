@@ -1707,8 +1707,20 @@ contains the selection state.
   <script>
     Polymer('z-btn-group', {
       radio: false,
+      initSelected: function () {
+        if (this.notap) {
+          return;
+        }
+        var itemList = Array.prototype.slice.call(this.children);
+        this.selected = itemList.map(function (item, index) {
+          return item.hasAttribute(this.selectedAttribute) ? index : -1;
+        }.bind(this)).filter(function (index) {
+          return index >= 0;
+        });
+      },
       domReady: function () {
         this.checkMode();
+        setTimeout(this.initSelected.bind(this));
       },
       radioChanged: function (o, n) {
         this.checkMode();
