@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html z="">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
+<title>Components - Zorro - Hiding Goods in the Shadow</title>
+
+<link rel="icon" href="logo/z_16x16.png">
+<link rel="apple-touch-icon" href="logo/z.png">
+<link rel="apple-touch-icon" sizes="64x64" href="logo/logo_64x64.png">
+<link rel="apple-touch-icon" sizes="128x128" href="logo/logo_128x128.png">
+<link rel="apple-touch-icon" sizes="512x512" href="logo/logo_512x512.png">
+
+<script src="../webcomponentsjs/webcomponents.js"></script>
+<link rel="import" href="imports.html">
+<link rel="import" href="../docs-maker/z-doc.html">
+
+<style>
+  @font-face {font-family: 'Russo One'; font-style: normal; font-weight: 400; src: local('Russo One'), local('RussoOne-Regular'), url(fonts/RussoOne.woff2) format('woff2'), url(fonts/RussoOne.woff) format('woff');}
+  @font-face {font-family: 'Play'; font-style: normal; font-weight: 400; src: local('Play'), url(fonts/Play.woff2) format('woff2'), url(fonts/Play.woff) format('woff');}
+  body {font-family: 'Play', sans-serif;}
+  h1 {font-family: 'Russo One', sans-serif;}
+</style>
+
+<style>
+  html[z] body {margin-top: 120px;}
+
+  body > z-bar {position: fixed; top: 0; left: 0; right: 0; z-index: 100;}
+
+  body >section {max-width: 800px; margin: 0 auto 20px; padding: 0 20px;}
+  body >section > h1 {background-color: #f0f0f0; background-image: url(logo/logo_64x64.png); background-size: 32px 32px; background-repeat: no-repeat; background-position: 20px center; padding: 15px 10px 15px 60px; border-radius: 3px; margin-left: -10px; margin-right: -10px;}
+
+  section {margin-bottom: 10px;}
+  section::before,
+  section::after {content: ""; clear: both; display: table;}
+
+  section[name="z-input"] #form,
+  section[name="z-input"] z-form {width: 320px;}
+  section[name="z-input"] #form z-input-text,
+  section[name="z-input"] #form z-input-select {display: block;}
+
+  z-doc /deep/ hr {display: none;}
+  z-doc /deep/ hr + p:last-child {display: none;}
+</style>
+
+</head>
+<body>
+
+<z-bar>
+  <div layout="" horizontal="" start="" style="margin-top: 5px;">
+    <div style="margin-right: 15px;">
+      <img src="logo/z_64x64.png">
+    </div>
+    <div flex="">
+      <h1 style="margin: 0;">Zorro</h1>
+      <p style="margin: 0;">Hiding Goods in the Shadow</p>
+    </div>
+  </div>
+  <z-bar-minor>
+    Dev by @&#x52FE;&#x4E09;&#x80A1;&#x56DB; |
+    <a target="_blank" href="http://weibo.com/mx006">Weibo</a> |
+    <a target="_blank" href="https://github.com/Jinjiang">Github</a> |
+    <a target="_blank" href="http://jiongks.name/">Blog</a>
+  </z-bar-minor>
+</z-bar>
+
+<section>
+  <h1>Typography</h1>
+
+  <z-doc name="z-typo"></z-doc>
+  <z-doc name="z-table"></z-doc>
+</section>
+
+<section>
+  <h1>Layout &amp; Container</h1>
+
+  <z-doc name="z-dock"></z-doc>
+  <z-doc name="z-grid"></z-doc>
+  <z-doc name="z-bar"></z-doc>
+  <z-doc name="z-phone"></z-doc>
+</section>
+
+<section>
+  <h1>Atoms</h1>
+
+  <z-doc name="z-icon"></z-doc>
+  <z-doc name="z-btn"></z-doc>
+  <z-doc name="z-menu"></z-doc>
+  <z-doc name="z-dropdown"></z-doc>
+  <z-doc name="z-btn-group"></z-doc>
+</section>
+
+<section>
+  <h1>Navs</h1>
+
+  <z-doc name="z-nav"></z-doc>
+  <z-doc name="z-panel"></z-doc>
+  <z-doc name="z-breadcrumb"></z-doc>
+  <z-doc name="z-pagination"></z-doc>
+</section>
+
+<section>
+  <h1>Form &amp; Controls</h1>
+
+  <!-- <z-doc name="z-input"></z-doc> -->
+  <section name="z-input" style="padding: 2em;">
+    <h1><code>&lt;z-input&gt;</code></h1>
+
+    <h2>Oneline Form</h2>
+    <div>
+      <z-form oneline="" style="width: 100%;">
+        <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
+        <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
+        <z-input-space label="">
+          <z-btn>Login</z-btn>
+        </z-input-space>
+      </z-form>
+    </div>
+
+    <h2>Vertical Form</h2>
+    <div>
+      <z-form>
+        <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
+        <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
+        <z-input-space label="">
+          <z-btn>Login</z-btn>
+        </z-input-space>
+      </z-form>
+    </div>
+
+    <h2>Flatten Form</h2>
+    <div>
+      <z-form flatten="">
+        <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
+        <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
+        <z-input-space label="">
+          <z-btn>Login</z-btn>
+        </z-input-space>
+      </z-form>
+    </div>
+
+    <h2>Form Controls</h2>
+    <div id="form">
+      <z-input-text id="test-input" label="Nickname" placeholder="2~16 characters" value="Nick">extra info ...</z-input-text>
+      <z-input-text label="Personal Description" placeholder="less than 140 letters" value="Personal
+  Introduction" multi="">extra info ...</z-input-text>
+      <z-input-select flatten="false" name="a" label="Select" value="green">
+        <z-datalist id="test-datalist">
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+        </z-datalist>
+        description
+      </z-input-select>
+      <z-input-select flatten="false" name="c" multi="" label="Multiple Select" values="[&quot;female&quot;]">
+        <z-datalist>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </z-datalist>
+        description
+      </z-input-select>
+      <z-input-select flatten="true" name="b" label="Flatten Select" value="option2">
+        <z-datalist>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+          <option value="option5">Option 5</option>
+          <option value="option6">Option 6</option>
+        </z-datalist>
+        description
+      </z-input-select>
+      <z-input-select flatten="true" name="d" multi="" label="Flatten Multiple Select" values="[&quot;option2&quot;]">
+        <z-datalist>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+          <option value="option5">Option 5</option>
+          <option value="option6">Option 6</option>
+        </z-datalist>
+        description
+      </z-input-select>
+    </div>
+  </section>
+
+  <z-doc name="z-progress"></z-doc>
+</section>
+
+<section>
+  <h1>Misc</h1>
+
+  <z-doc name="z-rmb"></z-doc>
+  <z-doc name="z-tag"></z-doc>
+  <z-doc name="z-time"></z-doc>
+  <z-doc name="z-note"></z-doc>
+</section>
+
+<section>
+  <h1>Layers</h1>
+
+  <z-doc name="z-dialog"></z-doc>
+  <z-doc name="z-tooltip"></z-doc>
+  <z-doc name="z-mask"></z-doc>
+</section>
+
+<!-- <section>
+  <h1>Utils</h1>
+
+  <z-doc name="z-script"></z-doc>
+</section> -->
+
+<section style="margin-top: 200px; margin-bottom: 80px;">
+  <hr>
+  <p>
+    Zorro: Dev by @&#x52FE;&#x4E09;&#x80A1;&#x56DB; |
+    <a target="_blank" href="http://weibo.com/mx006">Weibo</a> |
+    <a target="_blank" href="https://github.com/Jinjiang">Github</a> |
+    <a target="_blank" href="http://jiongks.name/">Blog</a>
+  </p>
+</section>
+
+</body>
+</html>
