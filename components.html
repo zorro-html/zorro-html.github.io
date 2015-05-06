@@ -79,7 +79,29 @@
   <z-doc name="z-dock"></z-doc>
   <z-doc name="z-grid"></z-doc>
   <z-doc name="z-bar"></z-doc>
-  <z-doc name="z-phone"></z-doc>
+  <!-- <z-doc name="z-phone"></z-doc> -->
+  <section name="z-phone" style="padding: 2em;">
+    <h1><code>&lt;z-phone&gt;</code></h1>
+
+    <p>Phone shell element, which could contains content to preview like in a smart phone</p>
+
+    <h2>Attributes</h2>
+
+    <li><code>innerwidth</code>: adjust the size the adapt the width of content in the phone cell</li>
+    <li><code>size</code>: JSON data to record <code>width</code>, <code>height</code>, <code>top</code> padding, <code>bottom</code> padding and <code>side</code> padding of the phone cell</li>
+    <li><code>bgimg</code>: image url of the phone, which is appropriate to the <code>size</code></li>
+
+    <h2>Examples</h2>
+
+    <z-phone innerwidth="240">
+      <div style="background: silver; height: 800px;">Hello World</div>
+    </z-phone>
+
+    <z-phone size="{'width': 374, 'height': 777, 'top': 102, 'bottom': 102, 'side': 27}" bgimg="../z-phone/iphone.png" innerwidth="240">
+        <div style="background: silver; height: 800px;">Hello World</div>
+    </z-phone>
+  </section>
+
 </section>
 
 <section>
