@@ -1,0 +1,80 @@
+<!--
+  # `z-doc`
+
+  用来生成文档和 demo
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../z-markdown/z-markdown.html">
+<link rel="import" href="z-example.html">
+<link rel="import" href="../z-typo/z-typo.html">
+
+<style>
+  @font-face {font-family: 'Russo One'; font-style: normal; font-weight: 400; src: local('Russo One'), local('RussoOne-Regular'), url(../fonts/RussoOne.woff2) format('woff2'), url(../fonts/RussoOne.woff) format('woff');}
+  @font-face {font-family: 'Play'; font-style: normal; font-weight: 400; src: local('Play'), url(../fonts/Play.woff2) format('woff2'), url(../fonts/Play.woff) format('woff');}
+  body {font-family: 'Play', sans-serif;}
+  html /deep/ h1 {font-family: 'Russo One', sans-serif;}
+</style>
+
+<script src="../docs-parser/docs-parser.js"></script>
+<script src="docs-maker.js"></script>
+
+<polymer-element name="z-doc" attributes="name, path" z>
+  <template>
+    <style>:host {display: block; max-width: 800px; padding: 2em; margin: auto;}</style>
+    <z-markdown text="{{info.description}}"></z-markdown>
+    <template if="{{info.examples.length}}">
+      <h2>Examples</h2>
+    </template>
+    <template repeat="{{example in info.examples}}">
+      <template if="{{example.name !== 'default'}}">
+        <h3>{{example.name}}</h3>
+      </template>
+      <z-example code="{{example.description}}"></z-example>
+    </template>
+    <hr style="margin-top: 40px; border: 0; border-bottom: 1px solid silver;">
+    <p>A component of <a href="http://zorro.io/">Zorro</a></p>
+  </template>
+  <script>
+    Polymer('z-doc', {
+      name: '',
+      path: '',
+
+      description: '',
+      info: null,
+
+      timer: null,
+
+      created: function () {
+        this.info = {examples: []};
+      },
+      ready: function () {
+        this.update();
+      },
+
+      nameChanged: function () {
+        this.update();
+      },
+      pathChanged: function () {
+        this.update();
+      },
+
+      update: function () {
+
+        clearTimeout(this.timer);
+
+        this.timer = setTimeout(function () {
+          var name = this.name || '';
+          var path = this.path || '';
+
+          if (name) {
+            var maker = new ZorroInfo(name, path);
+            maker.ready = function () {
+              this.info = maker.info[0];
+            }.bind(this);
+          }
+        }.bind(this), 100);
+      }
+    });
+  </script>
+</polymer-element>
+

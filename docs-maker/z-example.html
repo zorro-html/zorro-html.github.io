@@ -1,0 +1,48 @@
+<!--
+  # `z-example`
+
+  用来生成demo和代码片段展示
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="z-example" attributes="code">
+  <template>
+      <div example-container></div>
+      <pre>{{code}}</pre>
+    </template>
+  </template>
+  <script>
+    Polymer('z-example', {
+
+      code: '',
+
+      container: null,
+
+      runCode: function (code) {
+        var scripts = code.match(/<script[\s\S]*?>[\s\S]*?<\/script>/g);
+        scripts = scripts && scripts.map(function (script) {
+          return script.match(/<script[\s\S]*?>([\s\S]*?)<\/script>/)[1];
+        });
+        clearTimeout(this.scriptTimer);
+        this.scriptTimer = setTimeout(function () {
+          scripts && scripts.forEach(function (script) {
+            eval(script);
+          });
+        }.bind(this), 100);
+      },
+
+      codeChanged: function () {
+        this.code = trimEmptyLines(this.code);
+        if (this.container) {
+          this.container.innerHTML = this.code;
+          this.runCode(this.code);
+        }
+      },
+
+      ready: function () {
+        this.container = this.shadowRoot.querySelector('[example-container]');
+      }
+    });
+  </script>
+</polymer-element>
+
