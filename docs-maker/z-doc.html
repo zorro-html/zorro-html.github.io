@@ -67,10 +67,16 @@
           var path = this.path || '';
 
           if (name) {
-            var maker = new ZorroInfo(name, path);
-            maker.ready = function () {
-              this.info = maker.info[0];
-            }.bind(this);
+            if (typeof COMPONENT_INFO_MAP === 'object' && COMPONENT_INFO_MAP[name]) {
+              this.info = COMPONENT_INFO_MAP[name];
+              console.log(name, this.info);
+            }
+            else {
+              var maker = new ZorroInfo(name, path);
+              maker.ready = function () {
+                this.info = maker.info[0];
+              }.bind(this);
+            }
           }
         }.bind(this), 100);
       }
