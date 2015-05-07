@@ -35,6 +35,14 @@
   section::before,
   section::after {content: ""; clear: both; display: table;}
 
+  section[name="logo"] {text-align: center; margin-bottom: 40px;}
+  section[name="logo"] img {margin: 0 auto 2em; max-width: 40%; display: block;}
+  section[name="logo"] h1 {background: transparent;}
+
+  section[name="features"] {text-align: center; margin-bottom: 40px;}
+
+  section[name="categories"] {font-size: 1.5em; max-width: 640px; margin-bottom: 40px;}
+
   section[name="z-input"] #form,
   section[name="z-input"] z-form {width: 320px;}
   section[name="z-input"] #form z-input-text,
@@ -69,6 +77,38 @@
     <a target="_blank" href="http://jiongks.name/">Blog</a>
   </z-bar-minor>
 </z-bar>
+
+<section name="logo">
+  <img src="logo/logo_512x512.png">
+  <h1>A web components framework &amp; gallery</h1>
+  <p><z-btn primary lg href="https://github.com/zorro-html/zorro">View on Github</z-btn></p>
+  <!-- <iframe src="http://ghbtns.com/github-btn.html?user=Jinjiang&repo=zorro&type=watch&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe> -->
+</section>
+
+<section name="features">
+  <div class="row">
+    <div class="column column-4">
+      <h2>Use free, implemented on <a href="https://github.com/Polymer/polymer" target="_blank">Polymer</a>.</h2>
+    </div>
+    <div class="column column-4">
+      <h2>Full behavior, not only class, style or theme.</h2>
+    </div>
+    <div class="column column-4">
+      <h2>Super easy to import and use.</h2>
+    </div>
+  </div>
+</section>
+
+<section name="categories">
+  <ul>
+    <li>Typography: <small>non-invasive styles for heading, paragraphs, lists and tables</small></li>
+    <li>Layout &amp; containers: <small>help you to sketch up quickly</small></li>
+    <li>Atom elements: <small>most often used elements like buttons</small></li>
+    <li>Navs: <small>easy to nav and switch web content</small></li>
+    <li>Form &amp; controls: <small>totally new form layout and input types</small></li>
+    <li>Layers: <small>dialog, tooltips ...</small></li>
+  </ul>
+</section>
 
 <section>
   <h1>Typography</h1>
