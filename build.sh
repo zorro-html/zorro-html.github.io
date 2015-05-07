@@ -1,1 +1,1 @@
-vulcanize components.html -o components-build.html
+vulcanize components.html -o index.html

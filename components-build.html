@@ -1236,8 +1236,8 @@ html /deep/ .column-12 {
 
   body > z-bar {position: fixed; top: 0; left: 0; right: 0; z-index: 100;}
 
-  body >section {max-width: 800px; margin: 0 auto 20px; padding: 0 20px;}
-  body >section > h1 {background-color: #f0f0f0; background-image: url("logo/logo_64x64.png"); background-size: 32px 32px; background-repeat: no-repeat; background-position: 20px center; padding: 15px 10px 15px 60px; border-radius: 3px; margin-left: -10px; margin-right: -10px;}
+  body > section {max-width: 800px; margin: 0 auto 20px; padding: 0 20px;}
+  body > section > h1 {background-color: #f0f0f0; background-image: url("logo/logo_64x64.png"); background-size: 32px 32px; background-repeat: no-repeat; background-position: 20px center; padding: 15px 10px 15px 60px; border-radius: 3px; margin-left: -10px; margin-right: -10px;}
 
   section {margin-bottom: 10px;}
   section::before,
@@ -1255,7 +1255,9 @@ html /deep/ .column-12 {
   section[name="z-input"] z-form {width: 320px;}
   section[name="z-input"] #form z-input-text,
   section[name="z-input"] #form z-input-select {display: block;}
+</style>
 
+<style shim-shadowdom="">
   z-doc /deep/ hr {display: none;}
   z-doc /deep/ hr + p:last-child {display: none;}
 </style>
@@ -1811,9 +1813,11 @@ html /deep/ .column-12 {
         position: relative;
         display: inline-block;
       }
+      polyfill-next-selector {content: ':host > z-btn';}
       ::content > z-btn {
         width: 100%;
       }
+      polyfill-next-selector {content: ':host > z-btn::after';}
       ::content > z-btn::after {
         display: inline-block;
         width: 0;
@@ -1825,9 +1829,11 @@ html /deep/ .column-12 {
         border-left: 4px solid transparent;
         content: "";
       }
+      polyfill-next-selector {content: ':host > z-btn:empty::after';}
       ::content > z-btn:empty::after {
         margin-left: 0;
       }
+      polyfill-next-selector {content: ':host > z-menu';}
       ::content > z-menu {
         display: none;
         position: absolute;
@@ -2471,11 +2477,13 @@ html /deep/ .column-12 {
       ::content > z-dropdown:last-child > z-btn {
         margin-right: 0;
       }
+      polyfill-next-selector {content: ':host > z-btn:not(:last-child), z-dropdown:not(:last-child) > z-btn';}
       ::content > z-btn:not(:last-child),
       ::content > z-dropdown:not(:last-child) > z-btn {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
       }
+      polyfill-next-selector {content: ':host > z-btn:not(:first-child), z-dropdown:not(:first-child) > z-btn';}
       ::content > z-btn:not(:first-child),
       ::content > z-dropdown:not(:first-child) > z-btn {
         border-top-left-radius: 0;
@@ -2543,15 +2551,18 @@ html /deep/ .column-12 {
         display: inline-block;
         border-bottom: 1px solid #dddddd;
       }
+      polyfill-next-selector { content: ':host > li'; }
       ::content > li {
         margin-bottom: -1px;
         margin-right: 2px;
         border: 1px solid transparent;
         border-radius: 2px 2px 0 0;
       }
+      polyfill-next-selector { content: ':host > li:hover'; }
       ::content > li:hover {
         border-color: #eeeeee #eeeeee #dddddd;
       }
+      polyfill-next-selector { content: ':host > li[active], :host > li[active]:hover, :host > li[active]:focus'; }
       ::content > li[active],
       ::content > li[active]:hover,
       ::content > li[active]:focus {
@@ -2573,15 +2584,19 @@ html /deep/ .column-12 {
       :host {
         display: inline-block;
       }
+      polyfill-next-selector { content: ':host > li'; }
       ::content > li {
         border-radius: 2px;
       }
+      polyfill-next-selector { content: ':host > li + li'; }
       ::content > li + li {
         margin-left: 2px;
       }
+      polyfill-next-selector { content: ':host > li:hover'; }
       ::content > li:hover {
         border-color: #eeeeee #eeeeee #dddddd;
       }
+      polyfill-next-selector { content: ':host > li[active], :host > li[active]:hover, :host > li[active]:focus'; }
       ::content > li[active],
       ::content > li[active]:hover,
       ::content > li[active]:focus {
@@ -2601,12 +2616,15 @@ html /deep/ .column-12 {
       :host {
         display: inline-block;
       }
+      polyfill-next-selector { content: ':host > li'; }
       ::content > li {
         border-bottom: 3px solid transparent;
       }
+      polyfill-next-selector { content: ':host > li + li'; }
       ::content > li + li {
         margin-left: 2px;
       }
+      polyfill-next-selector { content: ':host > li[active], :host > li[active]:hover, :host > li[active]:focus'; }
       ::content > li[active],
       ::content > li[active]:hover,
       ::content > li[active]:focus {
@@ -3152,9 +3170,11 @@ html /deep/ .column-12 {
       /**
        * value 更新后立刻更新页码列表
        */
-      valueChanged: function () {
-        this.update();
-      },
+      valueChanged: function () {this.update();},
+      minChanged: function () {this.update();},
+      maxChanged: function () {this.update();},
+      rangeChanged: function () {this.update();},
+      siderangeChanged: function () {this.update();},
 
       /**
        * 设置配置项，并立刻更新页码列表
@@ -3308,7 +3328,7 @@ html /deep/ .column-12 {
       :host > z-dock::shadow > div[flex] {-webkit-flex: 1; flex: auto; -webkit-align-items: center; align-items: center;}
     </style>
     <z-dock>
-      <z-dock-right vertical="">
+      <z-dock-right>
         <content select="z-bar-minor"></content>
       </z-dock-right>
       <z-dock-main style="-webkit-flex: auto; flex: auto;">
