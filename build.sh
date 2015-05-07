@@ -1,1 +1,1 @@
-vulcanize components.html -o index.html
+vulcanize debug.html -o index.html
