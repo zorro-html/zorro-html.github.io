@@ -12,1245 +12,6 @@
 <link rel="apple-touch-icon" sizes="512x512" href="logo/logo_512x512.png">
 
 <script src="webcomponentsjs/webcomponents.js"></script>
-<style shim-shadowdom="">
-[z],
-html /deep/ [z] {
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-}
-[z] body {
-  background-color: #fff;
-  margin: 0;
-}
-[z] /deep/ h1,
-html /deep/ [z] /deep/ h1,
-[z] /deep/ h2,
-html /deep/ [z] /deep/ h2,
-[z] /deep/ h3,
-html /deep/ [z] /deep/ h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-[z] /deep/ h4,
-html /deep/ [z] /deep/ h4,
-[z] /deep/ h5,
-html /deep/ [z] /deep/ h5,
-[z] /deep/ h6,
-html /deep/ [z] /deep/ h6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-[z] /deep/ p,
-html /deep/ [z] /deep/ p,
-[z] /deep/ ul,
-html /deep/ [z] /deep/ ul,
-[z] /deep/ ol,
-html /deep/ [z] /deep/ ol {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-[z] /deep/ ul[unstyled],
-html /deep/ [z] /deep/ ul[unstyled],
-[z] /deep/ ol[unstyled],
-html /deep/ [z] /deep/ ol[unstyled] {
-  padding-left: 0;
-  list-style: none;
-}
-[z] /deep/ h1,
-html /deep/ [z] /deep/ h1 {font-size: 2em;}
-[z] /deep/ h2,
-html /deep/ [z] /deep/ h2 {font-size: 1.5em;}
-[z] /deep/ h3,
-html /deep/ [z] /deep/ h3 {font-size: 1.17em;}
-[z] /deep/ h4,
-html /deep/ [z] /deep/ h4 {font-size: 1em;}
-[z] /deep/ h5,
-html /deep/ [z] /deep/ h5 {font-size: 0.83em;}
-[z] /deep/ h6,
-html /deep/ [z] /deep/ h6 {font-size: 0.67em;}
-</style>
-
-<style shim-shadowdom="">
-[z] /deep/ table,
-html /deep/ [z] /deep/ table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  max-width: 100%;
-  width: 100%;
-  background-color: white;
-  margin-bottom: 20px;
-}
-[z] /deep/ th,
-html /deep/ [z] /deep/ th,
-[z] /deep/ td,
-html /deep/ [z] /deep/ td {
-  text-align: left;
-  padding: 15px;
-  line-height: 1.42857143;
-  vertical-align: top;
-  border-top: 1px solid #dddddd;
-}
-[z] /deep/ thead th,
-html /deep/ [z] /deep/ thead th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #dddddd;
-}
-[z] /deep/ thead > tr:first-child > th,
-html /deep/ [z] /deep/ thead > tr:first-child > th,
-[z] /deep/ thead > tr:first-child > td,
-html /deep/ [z] /deep/ thead > tr:first-child > td {
-  border-top: 0;
-}
-[z] /deep/ tbody + tbody,
-html /deep/ [z] /deep/ tbody + tbody {
-  border-top: 2px solid #dddddd;
-}
-
-[z] /deep/ table[bordered],
-html /deep/ [z] /deep/ table[bordered] {
-  border: 1px solid #dddddd;
-}
-[z] /deep/ table[bordered] th,
-html /deep/ [z] /deep/ table[bordered] th,
-[z] /deep/ table[bordered] td,
-html /deep/ [z] /deep/ table[bordered] td {
-  border: 1px solid #dddddd;
-}
-[z] /deep/ table[bordered] thead th,
-html /deep/ [z] /deep/ table[bordered] thead th,
-[z] /deep/ table[bordered] thead td,
-html /deep/ [z] /deep/ table[bordered] thead td {
-  border-bottom-width: 2px;
-}
-[z] /deep/ table[striped] tr:nth-child(odd) td,
-html /deep/ [z] /deep/ table[striped] tr:nth-child(odd) td,
-[z] /deep/ table[striped] tr:nth-child(odd) th,
-html /deep/ [z] /deep/ table[striped] tr:nth-child(odd) th {
-  background-color: #f9f9f9;
-}
-[z] /deep/ table[hover] tr:hover td,
-html /deep/ [z] /deep/ table[hover] tr:hover td,
-[z] /deep/ table[hover] tr:hover th,
-html /deep/ [z] /deep/ table[hover] tr:hover th {
-  background-color: #f5f5f5;
-}
-[z] /deep/ tr > .active,
-html /deep/ [z] /deep/ tr > .active,
-[z] /deep/ .active > td,
-html /deep/ [z] /deep/ .active > td,
-[z] /deep/ .active > th,
-html /deep/ [z] /deep/ .active > th {
-  background-color: #f5f5f5;
-}
-[z] /deep/ table[hover] tbody tr > .active:hover,
-html /deep/ [z] /deep/ table[hover] tbody tr > .active:hover,
-[z] /deep/ table[hover] tbody .active:hover > td,
-html /deep/ [z] /deep/ table[hover] tbody .active:hover > td,
-[z] /deep/ table[hover] tbody .active:hover > th,
-html /deep/ [z] /deep/ table[hover] tbody .active:hover > th {
-  background-color: #e8e8e8;
-}
-[z] /deep/ thead > tr,
-html /deep/ [z] /deep/ thead > tr {
-  background-color: #eeeeee;
-}
-[z] /deep/ table[bordered] thead th,
-html /deep/ [z] /deep/ table[bordered] thead th,
-[z] /deep/ table[bordered] thead td,
-html /deep/ [z] /deep/ table[bordered] thead td {
-  border-bottom-width: 1px;
-}
-</style>
-
-
-<style shim-shadowdom="">
-/*******************************
-          Flex Layout
-*******************************/
-
-html /deep/ [layout][horizontal], html /deep/ [layout][vertical] {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-
-html /deep/ [layout][horizontal][inline], html /deep/ [layout][vertical][inline] {
-  display: -ms-inline-flexbox;
-  display: -webkit-inline-flex;
-  display: inline-flex;
-}
-
-html /deep/ [layout][horizontal] {
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-}
-
-html /deep/ [layout][horizontal][reverse] {
-  -ms-flex-direction: row-reverse;
-  -webkit-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-}
-
-html /deep/ [layout][vertical] {
-  -ms-flex-direction: column;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-}
-
-html /deep/ [layout][vertical][reverse] {
-  -ms-flex-direction: column-reverse;
-  -webkit-flex-direction: column-reverse;
-  flex-direction: column-reverse;
-}
-
-html /deep/ [layout][wrap] {
-  -ms-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-html /deep/ [layout][wrap-reverse] {
-  -ms-flex-wrap: wrap-reverse;
-  -webkit-flex-wrap: wrap-reverse;
-  flex-wrap: wrap-reverse;
-}
-
-html /deep/ [flex] {
-  -ms-flex: 1 1 0.000000001px;
-  -webkit-flex: 1;
-  flex: 1;
-  -webkit-flex-basis: 0.000000001px;
-  flex-basis: 0.000000001px;
-}
-
-html /deep/ [vertical][layout] > [flex][auto-vertical], html /deep/ [vertical][layout]::shadow [flex][auto-vertical] {
-  -ms-flex: 1 1 auto;
-  -webkit-flex-basis: auto;
-  flex-basis: auto;
-}
-
-html /deep/ [flex][auto] {
-  -ms-flex: 1 1 auto;
-  -webkit-flex-basis: auto;
-  flex-basis: auto;
-}
-
-html /deep/ [flex][none] {
-  -ms-flex: none;
-  -webkit-flex: none;
-  flex: none;
-}
-
-html /deep/ [flex][one] {
-  -ms-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-}
-
-html /deep/ [flex][two] {
-  -ms-flex: 2;
-  -webkit-flex: 2;
-  flex: 2;
-}
-
-html /deep/ [flex][three] {
-  -ms-flex: 3;
-  -webkit-flex: 3;
-  flex: 3;
-}
-
-html /deep/ [flex][four] {
-  -ms-flex: 4;
-  -webkit-flex: 4;
-  flex: 4;
-}
-
-html /deep/ [flex][five] {
-  -ms-flex: 5;
-  -webkit-flex: 5;
-  flex: 5;
-}
-
-html /deep/ [flex][six] {
-  -ms-flex: 6;
-  -webkit-flex: 6;
-  flex: 6;
-}
-
-html /deep/ [flex][seven] {
-  -ms-flex: 7;
-  -webkit-flex: 7;
-  flex: 7;
-}
-
-html /deep/ [flex][eight] {
-  -ms-flex: 8;
-  -webkit-flex: 8;
-  flex: 8;
-}
-
-html /deep/ [flex][nine] {
-  -ms-flex: 9;
-  -webkit-flex: 9;
-  flex: 9;
-}
-
-html /deep/ [flex][ten] {
-  -ms-flex: 10;
-  -webkit-flex: 10;
-  flex: 10;
-}
-
-html /deep/ [flex][eleven] {
-  -ms-flex: 11;
-  -webkit-flex: 11;
-  flex: 11;
-}
-
-html /deep/ [flex][twelve] {
-  -ms-flex: 12;
-  -webkit-flex: 12;
-  flex: 12;
-}
-
-/* alignment in cross axis */
-
-html /deep/ [layout][start] {
-  -ms-flex-align: start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
-}
-
-html /deep/ [layout][center], html /deep/ [layout][center-center] {
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-html /deep/ [layout][end] {
-  -ms-flex-align: end;
-  -webkit-align-items: flex-end;
-  align-items: flex-end;
-}
-
-/* alignment in main axis */
-
-html /deep/ [layout][start-justified] {
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-}
-
-html /deep/ [layout][center-justified], html /deep/ [layout][center-center] {
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-html /deep/ [layout][end-justified] {
-  -ms-flex-pack: end;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-}
-
-html /deep/ [layout][around-justified] {
-  -ms-flex-pack: distribute;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-}
-
-html /deep/ [layout][justified] {
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-}
-
-/* self alignment */
-
-html /deep/ [self-start] {
-  -ms-align-self: flex-start;
-  -webkit-align-self: flex-start;
-  align-self: flex-start;
-}
-
-html /deep/ [self-center] {
-  -ms-align-self: center;
-  -webkit-align-self: center;
-  align-self: center;
-}
-
-html /deep/ [self-end] {
-  -ms-align-self: flex-end;
-  -webkit-align-self: flex-end;
-  align-self: flex-end;
-}
-
-html /deep/ [self-stretch] {
-  -ms-align-self: stretch;
-  -webkit-align-self: stretch;
-  align-self: stretch;
-}
-
-/*******************************
-          Other Layout
-*******************************/
-
-html /deep/ [block] {
-  display: block;
-}
-
-/* ie support for hidden */
-html /deep/ [hidden] {
-  display: none !important;
-}
-
-html /deep/ [relative] {
-  position: relative;
-}
-
-html /deep/ [fit] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-body[fullbleed] {
-  margin: 0;
-  height: 100vh;
-}
-
-/*******************************
-            Other
-*******************************/
-
-html /deep/ [segment], html /deep/ segment {
-  display: block;
-  position: relative;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 1em 0.5em;
-  padding: 1em;
-  background-color: white;
-  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 5px 5px 5px 5px;
-}
-
-</style>
-
-<script src="polymer/polymer.js"></script>
-
-
-<style>
-  @font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url("z-icon/fonts/glyphicons-halflings-regular.eot");
-    src: url("z-icon/fonts/glyphicons-halflings-regular.eot?#iefix") format('embedded-opentype'),
-         url("z-icon/fonts/glyphicons-halflings-regular.woff") format('woff'),
-         url("z-icon/fonts/glyphicons-halflings-regular.ttf") format('truetype'),
-         url("z-icon/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format('svg');
-  }
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style shim-shadowdom="">/*
-Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
-*/
-
-html /deep/ core-collapse {
-  display: block;
-}
-
-html /deep/ .core-collapse-closed {
-  display: none;
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style shim-shadowdom="">
-/*------------------------------*\
-    Grid System
-\*------------------------------*/
-
-html /deep/ .row, 
-html /deep/ .column {
-    box-sizing: border-box;
-}
-
-html /deep/ .row:before,
-html /deep/ .row:after {
-    content: " ";
-    display: table;
-}
-
-html /deep/ .row:after {
-    clear: both;
-}
-
-html /deep/ .column {
-    position: relative;
-    float: left;
-    display: block;
-}
-
-html /deep/ .column + .column {
-    margin-left: 1.6%;
-}
-
-html /deep/ .column-1 {
-    width: 6.86666666667%;
-}
-
-html /deep/ .column-2 {
-    width: 15.3333333333%;
-}
-
-html /deep/ .column-3 {
-    width: 23.8%;
-}
-
-html /deep/ .column-4 {
-    width: 32.2666666667%;
-}
-
-html /deep/ .column-5 {
-    width: 40.7333333333%;
-}
-
-html /deep/ .column-6 {
-    width: 49.2%;
-}
-
-html /deep/ .column-7 {
-    width: 57.6666666667%;
-}
-
-html /deep/ .column-8 {
-    width: 66.1333333333%;
-}
-
-html /deep/ .column-9 {
-    width: 74.6%;
-}
-
-html /deep/ .column-10 {
-    width: 83.0666666667%;
-}
-
-html /deep/ .column-11 {
-    width: 91.5333333333%;
-}
-
-html /deep/ .column-12 {
-    width: 100%;
-    margin-left: 0;
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-  (function () {
-
-    // Shout out to https://github.com/basecamp/local_time/blob/master/app/assets/javascripts/local_time.js.coffee
-    var weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-    function pad(num) {
-      return ('0' + num).slice(-2);
-    }
-
-    function strftime(time, formatString) {
-      var day = time.getDay();
-      var date = time.getDate();
-      var month = time.getMonth();
-      var year = time.getFullYear();
-      var hour = time.getHours();
-      var minute = time.getMinutes();
-      var second = time.getSeconds();
-      return formatString.replace(/%([%aAbBcdeHIlmMpPSwyYZz])/g, function(_arg) {
-        var match;
-        var modifier = _arg[1];
-        switch (modifier) {
-          case '%':
-            return '%';
-          case 'a':
-            return weekdays[day].slice(0, 3);
-          case 'A':
-            return weekdays[day];
-          case 'b':
-            return months[month].slice(0, 3);
-          case 'B':
-            return months[month];
-          case 'c':
-            return time.toString();
-          case 'd':
-            return pad(date);
-          case 'e':
-            return date;
-          case 'H':
-            return pad(hour);
-          case 'I':
-            return pad(strftime(time, '%l'));
-          case 'l':
-            if (hour === 0 || hour === 12) {
-              return 12;
-            } else {
-              return (hour + 12) % 12;
-            }
-            break;
-          case 'm':
-            return pad(month + 1);
-          case 'M':
-            return pad(minute);
-          case 'p':
-            if (hour > 11) {
-              return 'PM';
-            } else {
-              return 'AM';
-            }
-            break;
-          case 'P':
-            if (hour > 11) {
-              return 'pm';
-            } else {
-              return 'am';
-            }
-            break;
-          case 'S':
-            return pad(second);
-          case 'w':
-            return day;
-          case 'y':
-            return pad(year % 100);
-          case 'Y':
-            return year;
-          case 'Z':
-            match = time.toString().match(/\((\w+)\)$/);
-            return match ? match[1] : '';
-          case 'z':
-            match = time.toString().match(/\w([+-]\d\d\d\d) /);
-            return match ? match[1] : '';
-        }
-      });
-    }
-
-    function RelativeTime(date) {
-      this.date = date;
-    }
-
-    RelativeTime.prototype.toString = function() {
-      var ago = this.timeElapsed();
-      if (ago) {
-        return ago;
-      } else {
-        return 'on ' + this.formatDate();
-      }
-    };
-
-    RelativeTime.prototype.timeElapsed = function() {
-      var ms = new Date().getTime() - this.date.getTime();
-      var sec = Math.round(ms / 1000);
-      var min = Math.round(sec / 60);
-      var hr = Math.round(min / 60);
-      var day = Math.round(hr / 24);
-      if (ms < 0) {
-        return 'just now';
-      } else if (sec < 10) {
-        return 'just now';
-      } else if (sec < 45) {
-        return sec + ' seconds ago';
-      } else if (sec < 90) {
-        return 'a minute ago';
-      } else if (min < 45) {
-        return min + ' minutes ago';
-      } else if (min < 90) {
-        return 'an hour ago';
-      } else if (hr < 24) {
-        return hr + ' hours ago';
-      } else if (hr < 36) {
-        return 'a day ago';
-      } else if (day < 30) {
-        return day + ' days ago';
-      } else {
-        return null;
-      }
-    };
-
-    RelativeTime.prototype.timeAgo = function() {
-      var ms = new Date().getTime() - this.date.getTime();
-      var sec = Math.round(ms / 1000);
-      var min = Math.round(sec / 60);
-      var hr = Math.round(min / 60);
-      var day = Math.round(hr / 24);
-      var month = Math.round(day / 30);
-      var year = Math.round(month / 12);
-      if (ms < 0) {
-        return 'just now';
-      } else if (sec < 10) {
-        return 'just now';
-      } else if (sec < 45) {
-        return sec + ' seconds ago';
-      } else if (sec < 90) {
-        return 'a minute ago';
-      } else if (min < 45) {
-        return min + ' minutes ago';
-      } else if (min < 90) {
-        return 'an hour ago';
-      } else if (hr < 24) {
-        return hr + ' hours ago';
-      } else if (hr < 36) {
-        return 'a day ago';
-      } else if (day < 30) {
-        return day + ' days ago';
-      } else if (day < 45) {
-        return 'a month ago';
-      } else if (month < 12) {
-        return month + ' months ago';
-      } else if (month < 18) {
-          return 'a year ago';
-      } else {
-        return year + ' years ago';
-      }
-    };
-
-    RelativeTime.prototype.microTimeAgo = function() {
-      var ms = new Date().getTime() - this.date.getTime();
-      var sec = ms / 1000;
-      var min = sec / 60;
-      var hr = min / 60;
-      var day = hr / 24;
-      var month = day / 30;
-      var year = month / 12;
-      if (min < 1) {
-        return '1m';
-      } else if (min < 60) {
-        return Math.round(min) + 'm';
-      } else if (hr < 24) {
-        return Math.round(hr) + 'h';
-      } else if (day < 365) {
-        return Math.round(day) + 'd';
-      } else {
-        return Math.round(year) + 'y';
-      }
-    };
-
-    // Private: Determine if the day should be formatted before the month name in
-    // the user's current locale. For example, `9 Jun` for en-GB and `Jun 9`
-    // for en-US.
-    //
-    // Returns true if the day appears before the month.
-    function isDayFirst() {
-      if (dayFirst !== null) {
-        return dayFirst;
-      }
-
-      if (!('Intl' in window)) {
-        return false;
-      }
-
-      var options = {day: 'numeric', month: 'short'};
-      var formatter = new window.Intl.DateTimeFormat(undefined, options);
-      var output = formatter.format(new Date(0));
-
-      dayFirst = !!output.match(/^\d/);
-      return dayFirst;
-    }
-    var dayFirst = null;
-
-    // Private: Determine if the year should be separated from the month and day
-    // with a comma. For example, `9 Jun 2014` in en-GB and `Jun 9, 2014` in en-US.
-    //
-    // Returns true if the date needs a separator.
-    function isYearSeparator() {
-      if (yearSeparator !== null) {
-        return yearSeparator;
-      }
-
-      if (!('Intl' in window)) {
-        return true;
-      }
-
-      var options = {day: 'numeric', month: 'short', year: 'numeric'};
-      var formatter = new window.Intl.DateTimeFormat(undefined, options);
-      var output = formatter.format(new Date(0));
-
-      yearSeparator = !!output.match(/\d,/);
-      return yearSeparator;
-    }
-    var yearSeparator = null;
-
-    // Private: Determine if the date occurs in the same year as today's date.
-    //
-    // date - The Date to test.
-    //
-    // Returns true if it's this year.
-    function isThisYear(date) {
-      var now = new Date();
-      return now.getUTCFullYear() === date.getUTCFullYear();
-    }
-
-    RelativeTime.prototype.formatDate = function() {
-      var format = isDayFirst() ? '%e %b' : '%b %e';
-      if (!isThisYear(this.date)) {
-        format += isYearSeparator() ? ', %Y': ' %Y';
-      }
-      return strftime(this.date, format);
-    };
-
-    RelativeTime.prototype.formatTime = function() {
-      if ('Intl' in window) {
-        var formatter = new window.Intl.DateTimeFormat(undefined, {hour: 'numeric', minute: '2-digit'});
-        return formatter.format(this.date);
-      } else {
-        return strftime(this.date, '%l:%M%P');
-      }
-    };
-
-
-    // Internal: Array tracking all elements attached to the document that need
-    // to be updated every minute.
-    var nowElements = [];
-
-    // Internal: Timer ID for `updateNowElements` interval.
-    var updateNowElementsId;
-
-    // Internal: Install a timer to refresh all attached relative-time elements every
-    // minute.
-    function updateNowElements() {
-      var time, i, len;
-      for (i = 0, len = nowElements.length; i < len; i++) {
-        time = nowElements[i];
-        time.textContent = time.getFormattedDate();
-      }
-    }
-
-
-    var ExtendedTimePrototype = Object.create(document.createElement('z-time'));
-    // var ExtendedTimePrototype;
-    // if ('HTMLTimeElement' in window) {
-    //   ExtendedTimePrototype = Object.create(window.HTMLTimeElement.prototype);
-    // } else {
-    //   ExtendedTimePrototype = Object.create(window.HTMLElement.prototype);
-    // }
-
-    // Internal: Refresh the time element's formatted date when an attribute changes.
-    //
-    // Returns nothing.
-    ExtendedTimePrototype.attributeChangedCallback = function(attrName, oldValue, newValue) {
-      if (attrName === 'datetime') {
-        var millis = Date.parse(newValue);
-        this._date = isNaN(millis) ? null : new Date(millis);
-      }
-
-      var title = this.getFormattedTitle();
-      if (title) {
-        this.setAttribute('title', title);
-      }
-
-      var text = this.getFormattedDate();
-      if (text) {
-        this.textContent = text;
-      }
-    };
-
-    // Internal: Format the ISO 8601 timestamp according to the user agent's
-    // locale-aware formatting rules. The element's existing `title` attribute
-    // value takes precedence over this custom format.
-    //
-    // Returns a formatted time String.
-    ExtendedTimePrototype.getFormattedTitle = function() {
-      if (!this._date) {
-        return;
-      }
-
-      if (this.hasAttribute('title')) {
-        return this.getAttribute('title');
-      }
-
-      if ('Intl' in window) {
-        var options = {day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short'};
-        var formatter = new window.Intl.DateTimeFormat(undefined, options);
-        return formatter.format(this._date);
-      }
-
-      return this._date.toLocaleString();
-    };
-
-
-    var RelativeTimePrototype = Object.create(ExtendedTimePrototype);
-
-    RelativeTimePrototype.createdCallback = function() {
-      var value = this.getAttribute('datetime');
-      if (value) {
-        this.attributeChangedCallback('datetime', null, value);
-      }
-    };
-
-    RelativeTimePrototype.getFormattedDate = function() {
-      if (this._date) {
-        return new RelativeTime(this._date).toString();
-      }
-    };
-
-    RelativeTimePrototype.attachedCallback = function() {
-      nowElements.push(this);
-
-      if (!updateNowElementsId) {
-        updateNowElements();
-        updateNowElementsId = setInterval(updateNowElements, 60 * 1000);
-      }
-    };
-
-    RelativeTimePrototype.detachedCallback = function() {
-      var ix = nowElements.indexOf(this);
-      if (ix !== -1) {
-        nowElements.splice(ix, 1);
-      }
-
-      if (!nowElements.length) {
-        if (updateNowElementsId) {
-          clearInterval(updateNowElementsId);
-          updateNowElementsId = null;
-        }
-      }
-    };
-
-    var TimeAgoPrototype = Object.create(RelativeTimePrototype);
-    TimeAgoPrototype.getFormattedDate = function() {
-      if (this._date) {
-        var format = this.getAttribute('format');
-        if (format === 'micro') {
-          return new RelativeTime(this._date).microTimeAgo();
-        } else {
-          return new RelativeTime(this._date).timeAgo();
-        }
-      }
-    };
-
-
-    var LocalTimePrototype = Object.create(ExtendedTimePrototype);
-
-    LocalTimePrototype.createdCallback = function() {
-      var value;
-      if (value = this.getAttribute('datetime')) {
-        this.attributeChangedCallback('datetime', null, value);
-      }
-      if (value = this.getAttribute('format')) {
-        this.attributeChangedCallback('format', null, value);
-      }
-    };
-
-    // Formats the element's date, in the user's current locale, according to
-    // the formatting attribute values. Values are not passed straight through to
-    // an Intl.DateTimeFormat instance so that weekday and month names are always
-    // displayed in English, for now.
-    //
-    // Supported attributes are:
-    //
-    //   weekday - "short", "long"
-    //   year    - "numeric", "2-digit"
-    //   month   - "short", "long"
-    //   day     - "numeric", "2-digit"
-    //   hour    - "numeric", "2-digit"
-    //   minute  - "numeric", "2-digit"
-    //   second  - "numeric", "2-digit"
-    //
-    // Returns a formatted time String.
-    LocalTimePrototype.getFormattedDate = function() {
-      if (!this._date) {
-        return;
-      }
-
-      var date = formatDate(this) || '';
-      var time = formatTime(this) || '';
-      return (date + ' ' + time).trim();
-    };
-
-    // Private: Format a date according to the `weekday`, `day`, `month`,
-    // and `year` attribute values.
-    //
-    // This doesn't use Intl.DateTimeFormat to avoid creating text in the user's
-    // language when the majority of the surrounding text is in English. There's
-    // currently no way to separate the language from the format in Intl.
-    //
-    // el - The local-time element to format.
-    //
-    // Returns a date String or null if no date formats are provided.
-    function formatDate(el) {
-      // map attribute values to strftime
-      var props = {
-        weekday: {
-          'short': '%a',
-          'long': '%A'
-        },
-        day: {
-          'numeric': '%e',
-          '2-digit': '%d'
-        },
-        month: {
-          'short': '%b',
-          'long': '%B'
-        },
-        year: {
-          'numeric': '%Y',
-          '2-digit': '%y'
-        }
-      };
-
-      // build a strftime format string
-      var format = isDayFirst() ? 'weekday day month year' : 'weekday month day, year';
-      for (var prop in props) {
-        var value = props[prop][el.getAttribute(prop)];
-        format = format.replace(prop, value || '');
-      }
-
-      // clean up year separator comma
-      format = format.replace(/(\s,)|(,\s$)/, '');
-
-      // squeeze spaces from final string
-      return strftime(el._date, format).replace(/\s+/, ' ').trim();
-    }
-
-    // Private: Format a time according to the `hour`, `minute`, and `second`
-    // attribute values.
-    //
-    // el - The local-time element to format.
-    //
-    // Returns a time String or null if no time formats are provided.
-    function formatTime(el) {
-      // retrieve format settings from attributes
-      var options = {
-        hour: el.getAttribute('hour'),
-        minute: el.getAttribute('minute'),
-        second: el.getAttribute('second')
-      };
-
-      // remove unset format attributes
-      for (var opt in options) {
-        if (!options[opt]) {
-          delete options[opt];
-        }
-      }
-
-      // no time format attributes provided
-      if (Object.keys(options).length === 0) {
-        return;
-      }
-
-      // locale-aware formatting of 24 or 12 hour times
-      if ('Intl' in window) {
-        var formatter = new window.Intl.DateTimeFormat(undefined, options);
-        return formatter.format(el._date);
-      }
-
-      // fall back to strftime for non-Intl browsers
-      var timef = options.second ? '%H:%M:%S' : '%H:%M';
-      return strftime(el._date, timef);
-    }
-
-    // Public: RelativeTimeElement constructor.
-    //
-    //   var time = new RelativeTimeElement()
-    //   # => <time is='relative-time'></time>
-    //
-    window.RelativeTimeElement = document.registerElement('z-time-relative', {
-      prototype: RelativeTimePrototype
-    });
-
-    window.TimeAgoElement = document.registerElement('z-time-ago', {
-      prototype: TimeAgoPrototype
-    });
-
-    // Public: LocalTimeElement constructor.
-    //
-    //   var time = new LocalTimeElement()
-    //   # => <time is='local-time'></time>
-    //
-    window.LocalTimeElement = document.registerElement('z-time-local', {
-      prototype: LocalTimePrototype
-    });
-
-  })();
-</script>
-
-
-
-
-
-
-<script>
-  (function (global) {
-    function getBaseURI(doc) {
-      var script = doc._currentScript || doc.currentScript;
-      var assetpath = script.parentNode.getAttribute('assetpath');
-      return getFullURL(assetpath, script.baseURI);
-    }
-
-    function getFullURL(url, baseURI) {
-      var frame = document.createElement("iframe");
-      frame.style.display = "none";
-      document.body.appendChild(frame);
-
-      var doc = frame.contentDocument;
-
-      var base = doc.createElement("base");
-      base.href = baseURI || '';
-      doc.head.appendChild(base);
-
-      var anchor = doc.createElement('a');
-      anchor.setAttribute('href', url || '');
-      
-      var fullUrl = anchor.href;
-
-      document.body.removeChild(frame);
-
-      return fullUrl;
-    }
-
-    global.getBaseURI = getBaseURI;
-    global.getFullURL = getFullURL;
-  })(this);
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <link rel="import" href="z-script/z-script.html"> -->
-
-
-
-<script src="marked/lib/marked.js"></script>
-
-
-<!--
-Element wrapper for the `marked` (http://marked.org/) library.
-
-@class z-markdown
-@blurb Element wrapper for the marked library.
-@status alpha
-@snap snap.png
--->
-
-
-
-
-
-
-<style>
-  @font-face {font-family: 'Russo One'; font-style: normal; font-weight: 400; src: local('Russo One'), local('RussoOne-Regular'), url("fonts/RussoOne.woff2") format('woff2'), url("fonts/RussoOne.woff") format('woff');}
-  @font-face {font-family: 'Play'; font-style: normal; font-weight: 400; src: local('Play'), url("fonts/Play.woff2") format('woff2'), url("fonts/Play.woff") format('woff');}
-  body {font-family: 'Play', sans-serif;}
-  html /deep/ h1 {font-family: 'Russo One', sans-serif;}
-</style>
-
-<script src="docs-parser/docs-parser.js"></script>
-<script src="docs-maker/docs-maker.js"></script>
-
-
 <script src="info.js"></script>
 
 <style>
@@ -4193,7 +2954,6 @@ Element wrapper for the `marked` (http://marked.org/) library.
   <script>
     (function () {
       var baseURI = getBaseURI(document);
-      console.log(baseURI, getFullURL('phone.png', baseURI));
 
       Polymer('z-phone', {
         size: {
@@ -4709,6 +3469,1248 @@ Element wrapper for the `marked` (http://marked.org/) library.
 
 </div>
 
+<style shim-shadowdom="">
+[z],
+html /deep/ [z] {
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+}
+[z] body {
+  background-color: #fff;
+  margin: 0;
+}
+[z] /deep/ h1,
+html /deep/ [z] /deep/ h1,
+[z] /deep/ h2,
+html /deep/ [z] /deep/ h2,
+[z] /deep/ h3,
+html /deep/ [z] /deep/ h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+[z] /deep/ h4,
+html /deep/ [z] /deep/ h4,
+[z] /deep/ h5,
+html /deep/ [z] /deep/ h5,
+[z] /deep/ h6,
+html /deep/ [z] /deep/ h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+[z] /deep/ p,
+html /deep/ [z] /deep/ p,
+[z] /deep/ ul,
+html /deep/ [z] /deep/ ul,
+[z] /deep/ ol,
+html /deep/ [z] /deep/ ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+[z] /deep/ ul[unstyled],
+html /deep/ [z] /deep/ ul[unstyled],
+[z] /deep/ ol[unstyled],
+html /deep/ [z] /deep/ ol[unstyled] {
+  padding-left: 0;
+  list-style: none;
+}
+[z] /deep/ h1,
+html /deep/ [z] /deep/ h1 {font-size: 2em;}
+[z] /deep/ h2,
+html /deep/ [z] /deep/ h2 {font-size: 1.5em;}
+[z] /deep/ h3,
+html /deep/ [z] /deep/ h3 {font-size: 1.17em;}
+[z] /deep/ h4,
+html /deep/ [z] /deep/ h4 {font-size: 1em;}
+[z] /deep/ h5,
+html /deep/ [z] /deep/ h5 {font-size: 0.83em;}
+[z] /deep/ h6,
+html /deep/ [z] /deep/ h6 {font-size: 0.67em;}
+</style>
+
+<style shim-shadowdom="">
+[z] /deep/ table,
+html /deep/ [z] /deep/ table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 20px;
+}
+[z] /deep/ th,
+html /deep/ [z] /deep/ th,
+[z] /deep/ td,
+html /deep/ [z] /deep/ td {
+  text-align: left;
+  padding: 15px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+[z] /deep/ thead th,
+html /deep/ [z] /deep/ thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+[z] /deep/ thead > tr:first-child > th,
+html /deep/ [z] /deep/ thead > tr:first-child > th,
+[z] /deep/ thead > tr:first-child > td,
+html /deep/ [z] /deep/ thead > tr:first-child > td {
+  border-top: 0;
+}
+[z] /deep/ tbody + tbody,
+html /deep/ [z] /deep/ tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+[z] /deep/ table[bordered],
+html /deep/ [z] /deep/ table[bordered] {
+  border: 1px solid #dddddd;
+}
+[z] /deep/ table[bordered] th,
+html /deep/ [z] /deep/ table[bordered] th,
+[z] /deep/ table[bordered] td,
+html /deep/ [z] /deep/ table[bordered] td {
+  border: 1px solid #dddddd;
+}
+[z] /deep/ table[bordered] thead th,
+html /deep/ [z] /deep/ table[bordered] thead th,
+[z] /deep/ table[bordered] thead td,
+html /deep/ [z] /deep/ table[bordered] thead td {
+  border-bottom-width: 2px;
+}
+[z] /deep/ table[striped] tr:nth-child(odd) td,
+html /deep/ [z] /deep/ table[striped] tr:nth-child(odd) td,
+[z] /deep/ table[striped] tr:nth-child(odd) th,
+html /deep/ [z] /deep/ table[striped] tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
+[z] /deep/ table[hover] tr:hover td,
+html /deep/ [z] /deep/ table[hover] tr:hover td,
+[z] /deep/ table[hover] tr:hover th,
+html /deep/ [z] /deep/ table[hover] tr:hover th {
+  background-color: #f5f5f5;
+}
+[z] /deep/ tr > .active,
+html /deep/ [z] /deep/ tr > .active,
+[z] /deep/ .active > td,
+html /deep/ [z] /deep/ .active > td,
+[z] /deep/ .active > th,
+html /deep/ [z] /deep/ .active > th {
+  background-color: #f5f5f5;
+}
+[z] /deep/ table[hover] tbody tr > .active:hover,
+html /deep/ [z] /deep/ table[hover] tbody tr > .active:hover,
+[z] /deep/ table[hover] tbody .active:hover > td,
+html /deep/ [z] /deep/ table[hover] tbody .active:hover > td,
+[z] /deep/ table[hover] tbody .active:hover > th,
+html /deep/ [z] /deep/ table[hover] tbody .active:hover > th {
+  background-color: #e8e8e8;
+}
+[z] /deep/ thead > tr,
+html /deep/ [z] /deep/ thead > tr {
+  background-color: #eeeeee;
+}
+[z] /deep/ table[bordered] thead th,
+html /deep/ [z] /deep/ table[bordered] thead th,
+[z] /deep/ table[bordered] thead td,
+html /deep/ [z] /deep/ table[bordered] thead td {
+  border-bottom-width: 1px;
+}
+</style>
+
+
+<style shim-shadowdom="">
+/*******************************
+          Flex Layout
+*******************************/
+
+html /deep/ [layout][horizontal], html /deep/ [layout][vertical] {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+html /deep/ [layout][horizontal][inline], html /deep/ [layout][vertical][inline] {
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+
+html /deep/ [layout][horizontal] {
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+html /deep/ [layout][horizontal][reverse] {
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+html /deep/ [layout][vertical] {
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+html /deep/ [layout][vertical][reverse] {
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+html /deep/ [layout][wrap] {
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+html /deep/ [layout][wrap-reverse] {
+  -ms-flex-wrap: wrap-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+html /deep/ [flex] {
+  -ms-flex: 1 1 0.000000001px;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-flex-basis: 0.000000001px;
+  flex-basis: 0.000000001px;
+}
+
+html /deep/ [vertical][layout] > [flex][auto-vertical], html /deep/ [vertical][layout]::shadow [flex][auto-vertical] {
+  -ms-flex: 1 1 auto;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+}
+
+html /deep/ [flex][auto] {
+  -ms-flex: 1 1 auto;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+}
+
+html /deep/ [flex][none] {
+  -ms-flex: none;
+  -webkit-flex: none;
+  flex: none;
+}
+
+html /deep/ [flex][one] {
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+html /deep/ [flex][two] {
+  -ms-flex: 2;
+  -webkit-flex: 2;
+  flex: 2;
+}
+
+html /deep/ [flex][three] {
+  -ms-flex: 3;
+  -webkit-flex: 3;
+  flex: 3;
+}
+
+html /deep/ [flex][four] {
+  -ms-flex: 4;
+  -webkit-flex: 4;
+  flex: 4;
+}
+
+html /deep/ [flex][five] {
+  -ms-flex: 5;
+  -webkit-flex: 5;
+  flex: 5;
+}
+
+html /deep/ [flex][six] {
+  -ms-flex: 6;
+  -webkit-flex: 6;
+  flex: 6;
+}
+
+html /deep/ [flex][seven] {
+  -ms-flex: 7;
+  -webkit-flex: 7;
+  flex: 7;
+}
+
+html /deep/ [flex][eight] {
+  -ms-flex: 8;
+  -webkit-flex: 8;
+  flex: 8;
+}
+
+html /deep/ [flex][nine] {
+  -ms-flex: 9;
+  -webkit-flex: 9;
+  flex: 9;
+}
+
+html /deep/ [flex][ten] {
+  -ms-flex: 10;
+  -webkit-flex: 10;
+  flex: 10;
+}
+
+html /deep/ [flex][eleven] {
+  -ms-flex: 11;
+  -webkit-flex: 11;
+  flex: 11;
+}
+
+html /deep/ [flex][twelve] {
+  -ms-flex: 12;
+  -webkit-flex: 12;
+  flex: 12;
+}
+
+/* alignment in cross axis */
+
+html /deep/ [layout][start] {
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+html /deep/ [layout][center], html /deep/ [layout][center-center] {
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+html /deep/ [layout][end] {
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+/* alignment in main axis */
+
+html /deep/ [layout][start-justified] {
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+html /deep/ [layout][center-justified], html /deep/ [layout][center-center] {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+html /deep/ [layout][end-justified] {
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+html /deep/ [layout][around-justified] {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+html /deep/ [layout][justified] {
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/* self alignment */
+
+html /deep/ [self-start] {
+  -ms-align-self: flex-start;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+
+html /deep/ [self-center] {
+  -ms-align-self: center;
+  -webkit-align-self: center;
+  align-self: center;
+}
+
+html /deep/ [self-end] {
+  -ms-align-self: flex-end;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+
+html /deep/ [self-stretch] {
+  -ms-align-self: stretch;
+  -webkit-align-self: stretch;
+  align-self: stretch;
+}
+
+/*******************************
+          Other Layout
+*******************************/
+
+html /deep/ [block] {
+  display: block;
+}
+
+/* ie support for hidden */
+html /deep/ [hidden] {
+  display: none !important;
+}
+
+html /deep/ [relative] {
+  position: relative;
+}
+
+html /deep/ [fit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+body[fullbleed] {
+  margin: 0;
+  height: 100vh;
+}
+
+/*******************************
+            Other
+*******************************/
+
+html /deep/ [segment], html /deep/ segment {
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1em 0.5em;
+  padding: 1em;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px 5px 5px 5px;
+}
+
+</style>
+
+<script src="polymer/polymer.js"></script>
+
+
+<style>
+  @font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url("z-icon/fonts/glyphicons-halflings-regular.eot");
+    src: url("z-icon/fonts/glyphicons-halflings-regular.eot?#iefix") format('embedded-opentype'),
+         url("z-icon/fonts/glyphicons-halflings-regular.woff") format('woff'),
+         url("z-icon/fonts/glyphicons-halflings-regular.ttf") format('truetype'),
+         url("z-icon/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format('svg');
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style shim-shadowdom="">/*
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+*/
+
+html /deep/ core-collapse {
+  display: block;
+}
+
+html /deep/ .core-collapse-closed {
+  display: none;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style shim-shadowdom="">
+/*------------------------------*\
+    Grid System
+\*------------------------------*/
+
+html /deep/ .row, 
+html /deep/ .column {
+    box-sizing: border-box;
+}
+
+html /deep/ .row:before,
+html /deep/ .row:after {
+    content: " ";
+    display: table;
+}
+
+html /deep/ .row:after {
+    clear: both;
+}
+
+html /deep/ .column {
+    position: relative;
+    float: left;
+    display: block;
+}
+
+html /deep/ .column + .column {
+    margin-left: 1.6%;
+}
+
+html /deep/ .column-1 {
+    width: 6.86666666667%;
+}
+
+html /deep/ .column-2 {
+    width: 15.3333333333%;
+}
+
+html /deep/ .column-3 {
+    width: 23.8%;
+}
+
+html /deep/ .column-4 {
+    width: 32.2666666667%;
+}
+
+html /deep/ .column-5 {
+    width: 40.7333333333%;
+}
+
+html /deep/ .column-6 {
+    width: 49.2%;
+}
+
+html /deep/ .column-7 {
+    width: 57.6666666667%;
+}
+
+html /deep/ .column-8 {
+    width: 66.1333333333%;
+}
+
+html /deep/ .column-9 {
+    width: 74.6%;
+}
+
+html /deep/ .column-10 {
+    width: 83.0666666667%;
+}
+
+html /deep/ .column-11 {
+    width: 91.5333333333%;
+}
+
+html /deep/ .column-12 {
+    width: 100%;
+    margin-left: 0;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  (function () {
+
+    // Shout out to https://github.com/basecamp/local_time/blob/master/app/assets/javascripts/local_time.js.coffee
+    var weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    function pad(num) {
+      return ('0' + num).slice(-2);
+    }
+
+    function strftime(time, formatString) {
+      var day = time.getDay();
+      var date = time.getDate();
+      var month = time.getMonth();
+      var year = time.getFullYear();
+      var hour = time.getHours();
+      var minute = time.getMinutes();
+      var second = time.getSeconds();
+      return formatString.replace(/%([%aAbBcdeHIlmMpPSwyYZz])/g, function(_arg) {
+        var match;
+        var modifier = _arg[1];
+        switch (modifier) {
+          case '%':
+            return '%';
+          case 'a':
+            return weekdays[day].slice(0, 3);
+          case 'A':
+            return weekdays[day];
+          case 'b':
+            return months[month].slice(0, 3);
+          case 'B':
+            return months[month];
+          case 'c':
+            return time.toString();
+          case 'd':
+            return pad(date);
+          case 'e':
+            return date;
+          case 'H':
+            return pad(hour);
+          case 'I':
+            return pad(strftime(time, '%l'));
+          case 'l':
+            if (hour === 0 || hour === 12) {
+              return 12;
+            } else {
+              return (hour + 12) % 12;
+            }
+            break;
+          case 'm':
+            return pad(month + 1);
+          case 'M':
+            return pad(minute);
+          case 'p':
+            if (hour > 11) {
+              return 'PM';
+            } else {
+              return 'AM';
+            }
+            break;
+          case 'P':
+            if (hour > 11) {
+              return 'pm';
+            } else {
+              return 'am';
+            }
+            break;
+          case 'S':
+            return pad(second);
+          case 'w':
+            return day;
+          case 'y':
+            return pad(year % 100);
+          case 'Y':
+            return year;
+          case 'Z':
+            match = time.toString().match(/\((\w+)\)$/);
+            return match ? match[1] : '';
+          case 'z':
+            match = time.toString().match(/\w([+-]\d\d\d\d) /);
+            return match ? match[1] : '';
+        }
+      });
+    }
+
+    function RelativeTime(date) {
+      this.date = date;
+    }
+
+    RelativeTime.prototype.toString = function() {
+      var ago = this.timeElapsed();
+      if (ago) {
+        return ago;
+      } else {
+        return 'on ' + this.formatDate();
+      }
+    };
+
+    RelativeTime.prototype.timeElapsed = function() {
+      var ms = new Date().getTime() - this.date.getTime();
+      var sec = Math.round(ms / 1000);
+      var min = Math.round(sec / 60);
+      var hr = Math.round(min / 60);
+      var day = Math.round(hr / 24);
+      if (ms < 0) {
+        return 'just now';
+      } else if (sec < 10) {
+        return 'just now';
+      } else if (sec < 45) {
+        return sec + ' seconds ago';
+      } else if (sec < 90) {
+        return 'a minute ago';
+      } else if (min < 45) {
+        return min + ' minutes ago';
+      } else if (min < 90) {
+        return 'an hour ago';
+      } else if (hr < 24) {
+        return hr + ' hours ago';
+      } else if (hr < 36) {
+        return 'a day ago';
+      } else if (day < 30) {
+        return day + ' days ago';
+      } else {
+        return null;
+      }
+    };
+
+    RelativeTime.prototype.timeAgo = function() {
+      var ms = new Date().getTime() - this.date.getTime();
+      var sec = Math.round(ms / 1000);
+      var min = Math.round(sec / 60);
+      var hr = Math.round(min / 60);
+      var day = Math.round(hr / 24);
+      var month = Math.round(day / 30);
+      var year = Math.round(month / 12);
+      if (ms < 0) {
+        return 'just now';
+      } else if (sec < 10) {
+        return 'just now';
+      } else if (sec < 45) {
+        return sec + ' seconds ago';
+      } else if (sec < 90) {
+        return 'a minute ago';
+      } else if (min < 45) {
+        return min + ' minutes ago';
+      } else if (min < 90) {
+        return 'an hour ago';
+      } else if (hr < 24) {
+        return hr + ' hours ago';
+      } else if (hr < 36) {
+        return 'a day ago';
+      } else if (day < 30) {
+        return day + ' days ago';
+      } else if (day < 45) {
+        return 'a month ago';
+      } else if (month < 12) {
+        return month + ' months ago';
+      } else if (month < 18) {
+          return 'a year ago';
+      } else {
+        return year + ' years ago';
+      }
+    };
+
+    RelativeTime.prototype.microTimeAgo = function() {
+      var ms = new Date().getTime() - this.date.getTime();
+      var sec = ms / 1000;
+      var min = sec / 60;
+      var hr = min / 60;
+      var day = hr / 24;
+      var month = day / 30;
+      var year = month / 12;
+      if (min < 1) {
+        return '1m';
+      } else if (min < 60) {
+        return Math.round(min) + 'm';
+      } else if (hr < 24) {
+        return Math.round(hr) + 'h';
+      } else if (day < 365) {
+        return Math.round(day) + 'd';
+      } else {
+        return Math.round(year) + 'y';
+      }
+    };
+
+    // Private: Determine if the day should be formatted before the month name in
+    // the user's current locale. For example, `9 Jun` for en-GB and `Jun 9`
+    // for en-US.
+    //
+    // Returns true if the day appears before the month.
+    function isDayFirst() {
+      if (dayFirst !== null) {
+        return dayFirst;
+      }
+
+      if (!('Intl' in window)) {
+        return false;
+      }
+
+      var options = {day: 'numeric', month: 'short'};
+      var formatter = new window.Intl.DateTimeFormat(undefined, options);
+      var output = formatter.format(new Date(0));
+
+      dayFirst = !!output.match(/^\d/);
+      return dayFirst;
+    }
+    var dayFirst = null;
+
+    // Private: Determine if the year should be separated from the month and day
+    // with a comma. For example, `9 Jun 2014` in en-GB and `Jun 9, 2014` in en-US.
+    //
+    // Returns true if the date needs a separator.
+    function isYearSeparator() {
+      if (yearSeparator !== null) {
+        return yearSeparator;
+      }
+
+      if (!('Intl' in window)) {
+        return true;
+      }
+
+      var options = {day: 'numeric', month: 'short', year: 'numeric'};
+      var formatter = new window.Intl.DateTimeFormat(undefined, options);
+      var output = formatter.format(new Date(0));
+
+      yearSeparator = !!output.match(/\d,/);
+      return yearSeparator;
+    }
+    var yearSeparator = null;
+
+    // Private: Determine if the date occurs in the same year as today's date.
+    //
+    // date - The Date to test.
+    //
+    // Returns true if it's this year.
+    function isThisYear(date) {
+      var now = new Date();
+      return now.getUTCFullYear() === date.getUTCFullYear();
+    }
+
+    RelativeTime.prototype.formatDate = function() {
+      var format = isDayFirst() ? '%e %b' : '%b %e';
+      if (!isThisYear(this.date)) {
+        format += isYearSeparator() ? ', %Y': ' %Y';
+      }
+      return strftime(this.date, format);
+    };
+
+    RelativeTime.prototype.formatTime = function() {
+      if ('Intl' in window) {
+        var formatter = new window.Intl.DateTimeFormat(undefined, {hour: 'numeric', minute: '2-digit'});
+        return formatter.format(this.date);
+      } else {
+        return strftime(this.date, '%l:%M%P');
+      }
+    };
+
+
+    // Internal: Array tracking all elements attached to the document that need
+    // to be updated every minute.
+    var nowElements = [];
+
+    // Internal: Timer ID for `updateNowElements` interval.
+    var updateNowElementsId;
+
+    // Internal: Install a timer to refresh all attached relative-time elements every
+    // minute.
+    function updateNowElements() {
+      var time, i, len;
+      for (i = 0, len = nowElements.length; i < len; i++) {
+        time = nowElements[i];
+        time.textContent = time.getFormattedDate();
+      }
+    }
+
+
+    var ExtendedTimePrototype = Object.create(document.createElement('z-time'));
+    // var ExtendedTimePrototype;
+    // if ('HTMLTimeElement' in window) {
+    //   ExtendedTimePrototype = Object.create(window.HTMLTimeElement.prototype);
+    // } else {
+    //   ExtendedTimePrototype = Object.create(window.HTMLElement.prototype);
+    // }
+
+    // Internal: Refresh the time element's formatted date when an attribute changes.
+    //
+    // Returns nothing.
+    ExtendedTimePrototype.attributeChangedCallback = function(attrName, oldValue, newValue) {
+      if (attrName === 'datetime') {
+        var millis = Date.parse(newValue);
+        this._date = isNaN(millis) ? null : new Date(millis);
+      }
+
+      var title = this.getFormattedTitle();
+      if (title) {
+        this.setAttribute('title', title);
+      }
+
+      var text = this.getFormattedDate();
+      if (text) {
+        this.textContent = text;
+      }
+    };
+
+    // Internal: Format the ISO 8601 timestamp according to the user agent's
+    // locale-aware formatting rules. The element's existing `title` attribute
+    // value takes precedence over this custom format.
+    //
+    // Returns a formatted time String.
+    ExtendedTimePrototype.getFormattedTitle = function() {
+      if (!this._date) {
+        return;
+      }
+
+      if (this.hasAttribute('title')) {
+        return this.getAttribute('title');
+      }
+
+      if ('Intl' in window) {
+        var options = {day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short'};
+        var formatter = new window.Intl.DateTimeFormat(undefined, options);
+        return formatter.format(this._date);
+      }
+
+      return this._date.toLocaleString();
+    };
+
+
+    var RelativeTimePrototype = Object.create(ExtendedTimePrototype);
+
+    RelativeTimePrototype.createdCallback = function() {
+      var value = this.getAttribute('datetime');
+      if (value) {
+        this.attributeChangedCallback('datetime', null, value);
+      }
+    };
+
+    RelativeTimePrototype.getFormattedDate = function() {
+      if (this._date) {
+        return new RelativeTime(this._date).toString();
+      }
+    };
+
+    RelativeTimePrototype.attachedCallback = function() {
+      nowElements.push(this);
+
+      if (!updateNowElementsId) {
+        updateNowElements();
+        updateNowElementsId = setInterval(updateNowElements, 60 * 1000);
+      }
+    };
+
+    RelativeTimePrototype.detachedCallback = function() {
+      var ix = nowElements.indexOf(this);
+      if (ix !== -1) {
+        nowElements.splice(ix, 1);
+      }
+
+      if (!nowElements.length) {
+        if (updateNowElementsId) {
+          clearInterval(updateNowElementsId);
+          updateNowElementsId = null;
+        }
+      }
+    };
+
+    var TimeAgoPrototype = Object.create(RelativeTimePrototype);
+    TimeAgoPrototype.getFormattedDate = function() {
+      if (this._date) {
+        var format = this.getAttribute('format');
+        if (format === 'micro') {
+          return new RelativeTime(this._date).microTimeAgo();
+        } else {
+          return new RelativeTime(this._date).timeAgo();
+        }
+      }
+    };
+
+
+    var LocalTimePrototype = Object.create(ExtendedTimePrototype);
+
+    LocalTimePrototype.createdCallback = function() {
+      var value;
+      if (value = this.getAttribute('datetime')) {
+        this.attributeChangedCallback('datetime', null, value);
+      }
+      if (value = this.getAttribute('format')) {
+        this.attributeChangedCallback('format', null, value);
+      }
+    };
+
+    // Formats the element's date, in the user's current locale, according to
+    // the formatting attribute values. Values are not passed straight through to
+    // an Intl.DateTimeFormat instance so that weekday and month names are always
+    // displayed in English, for now.
+    //
+    // Supported attributes are:
+    //
+    //   weekday - "short", "long"
+    //   year    - "numeric", "2-digit"
+    //   month   - "short", "long"
+    //   day     - "numeric", "2-digit"
+    //   hour    - "numeric", "2-digit"
+    //   minute  - "numeric", "2-digit"
+    //   second  - "numeric", "2-digit"
+    //
+    // Returns a formatted time String.
+    LocalTimePrototype.getFormattedDate = function() {
+      if (!this._date) {
+        return;
+      }
+
+      var date = formatDate(this) || '';
+      var time = formatTime(this) || '';
+      return (date + ' ' + time).trim();
+    };
+
+    // Private: Format a date according to the `weekday`, `day`, `month`,
+    // and `year` attribute values.
+    //
+    // This doesn't use Intl.DateTimeFormat to avoid creating text in the user's
+    // language when the majority of the surrounding text is in English. There's
+    // currently no way to separate the language from the format in Intl.
+    //
+    // el - The local-time element to format.
+    //
+    // Returns a date String or null if no date formats are provided.
+    function formatDate(el) {
+      // map attribute values to strftime
+      var props = {
+        weekday: {
+          'short': '%a',
+          'long': '%A'
+        },
+        day: {
+          'numeric': '%e',
+          '2-digit': '%d'
+        },
+        month: {
+          'short': '%b',
+          'long': '%B'
+        },
+        year: {
+          'numeric': '%Y',
+          '2-digit': '%y'
+        }
+      };
+
+      // build a strftime format string
+      var format = isDayFirst() ? 'weekday day month year' : 'weekday month day, year';
+      for (var prop in props) {
+        var value = props[prop][el.getAttribute(prop)];
+        format = format.replace(prop, value || '');
+      }
+
+      // clean up year separator comma
+      format = format.replace(/(\s,)|(,\s$)/, '');
+
+      // squeeze spaces from final string
+      return strftime(el._date, format).replace(/\s+/, ' ').trim();
+    }
+
+    // Private: Format a time according to the `hour`, `minute`, and `second`
+    // attribute values.
+    //
+    // el - The local-time element to format.
+    //
+    // Returns a time String or null if no time formats are provided.
+    function formatTime(el) {
+      // retrieve format settings from attributes
+      var options = {
+        hour: el.getAttribute('hour'),
+        minute: el.getAttribute('minute'),
+        second: el.getAttribute('second')
+      };
+
+      // remove unset format attributes
+      for (var opt in options) {
+        if (!options[opt]) {
+          delete options[opt];
+        }
+      }
+
+      // no time format attributes provided
+      if (Object.keys(options).length === 0) {
+        return;
+      }
+
+      // locale-aware formatting of 24 or 12 hour times
+      if ('Intl' in window) {
+        var formatter = new window.Intl.DateTimeFormat(undefined, options);
+        return formatter.format(el._date);
+      }
+
+      // fall back to strftime for non-Intl browsers
+      var timef = options.second ? '%H:%M:%S' : '%H:%M';
+      return strftime(el._date, timef);
+    }
+
+    // Public: RelativeTimeElement constructor.
+    //
+    //   var time = new RelativeTimeElement()
+    //   # => <time is='relative-time'></time>
+    //
+    window.RelativeTimeElement = document.registerElement('z-time-relative', {
+      prototype: RelativeTimePrototype
+    });
+
+    window.TimeAgoElement = document.registerElement('z-time-ago', {
+      prototype: TimeAgoPrototype
+    });
+
+    // Public: LocalTimeElement constructor.
+    //
+    //   var time = new LocalTimeElement()
+    //   # => <time is='local-time'></time>
+    //
+    window.LocalTimeElement = document.registerElement('z-time-local', {
+      prototype: LocalTimePrototype
+    });
+
+  })();
+</script>
+
+
+
+
+
+
+<script>
+  (function (global) {
+    function getBaseURI(doc) {
+      var script = doc._currentScript || doc.currentScript;
+      var assetpath = script.parentNode.getAttribute('assetpath');
+      return getFullURL(assetpath, script.baseURI);
+    }
+
+    function getFullURL(url, baseURI) {
+      var frame = document.createElement("iframe");
+      frame.style.display = "none";
+      document.body.appendChild(frame);
+
+      var doc = frame.contentDocument;
+
+      var base = doc.createElement("base");
+      base.href = baseURI || '';
+      doc.head.appendChild(base);
+
+      var anchor = doc.createElement('a');
+      anchor.setAttribute('href', url || '');
+      
+      var fullUrl = anchor.href;
+
+      document.body.removeChild(frame);
+
+      return fullUrl;
+    }
+
+    global.getBaseURI = getBaseURI;
+    global.getFullURL = getFullURL;
+  })(this);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <link rel="import" href="z-script/z-script.html"> -->
+
+
+
+<script src="marked/lib/marked.js"></script>
+
+
+<!--
+Element wrapper for the `marked` (http://marked.org/) library.
+
+@class z-markdown
+@blurb Element wrapper for the marked library.
+@status alpha
+@snap snap.png
+-->
+
+
+
+
+
+
+<style>
+  @font-face {font-family: 'Russo One'; font-style: normal; font-weight: 400; src: local('Russo One'), local('RussoOne-Regular'), url("fonts/RussoOne.woff2") format('woff2'), url("fonts/RussoOne.woff") format('woff');}
+  @font-face {font-family: 'Play'; font-style: normal; font-weight: 400; src: local('Play'), url("fonts/Play.woff2") format('woff2'), url("fonts/Play.woff") format('woff');}
+  body {font-family: 'Play', sans-serif;}
+  html /deep/ h1 {font-family: 'Russo One', sans-serif;}
+</style>
+
+<script src="docs-parser/docs-parser.js"></script>
+<script src="docs-maker/docs-maker.js"></script>
+
+
+
+<a href="https://github.com/zorro-html/zorro"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 101;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+
 <z-bar>
   <div layout="" horizontal="" start="" style="margin-top: 5px;">
     <div style="margin-right: 15px;">
@@ -4719,7 +4721,7 @@ Element wrapper for the `marked` (http://marked.org/) library.
       <p style="margin: 0;">Hiding Goods in the Shadow</p>
     </div>
   </div>
-  <z-bar-minor>
+  <z-bar-minor style="margin-right: 120px;">
     Dev by @勾三股四 |
     <a target="_blank" href="http://weibo.com/mx006">Weibo</a> |
     <a target="_blank" href="https://github.com/Jinjiang">Github</a> |
