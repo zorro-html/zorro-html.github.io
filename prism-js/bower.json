@@ -1,0 +1,23 @@
+{
+  "name": "prism-js",
+  "version": "0.1.0",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "highlighting",
+    "syntax"
+  ],
+  "description": "A Polymer element for syntax highlighting with Prism.js",
+  "main": "prism-js.html",
+  "ignore": [
+    "**/.*",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "prism": "*",
+    "he": "~0.3.6",
+    "polymer": "~0.5.0",
+    "core-input": "Polymer/core-input"
+  }
+}
