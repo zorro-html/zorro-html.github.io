@@ -4,11 +4,13 @@
   用来生成demo和代码片段展示
 -->
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../prism-js/prism-js.html">
 
 <polymer-element name="z-example" attributes="code">
   <template>
       <div example-container></div>
-      <pre>{{code}}</pre>
+      <!-- escape="true" -->
+      <prism-js language="markup">{{code}}</prism-js>
     </template>
   </template>
   <script>

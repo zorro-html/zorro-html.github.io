@@ -3,6 +3,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#~0.5",
     "z-markdown": "zorro-html/z-markdown",
-    "docs-parser": "zorro-html/zorro-docs-parser"
+    "docs-parser": "zorro-html/zorro-docs-parser",
+    "prism-js": "Jinjiang/prism-js#master"
   }
 }
