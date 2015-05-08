@@ -5087,28 +5087,7 @@ Specify a language and theme:
   <z-doc name="z-dock" path="z-dock/z-dock.html"></z-doc>
   <z-doc name="z-grid" path="z-grid/z-grid.html"></z-doc>
   <z-doc name="z-bar" path="z-bar/z-bar.html"></z-doc>
-  <!-- <z-doc name="z-phone" path="ame="z-phone/ame="z-phone.html"></z-doc> -->
-  <section name="z-phone" style="padding: 2em;">
-    <h1><code>&lt;z-phone&gt;</code></h1>
-
-    <p>Phone shell element, which could contains content to preview like in a smart phone</p>
-
-    <h2>Attributes</h2>
-
-    <li><code>innerwidth</code>: adjust the size the adapt the width of content in the phone cell</li>
-    <li><code>size</code>: JSON data to record <code>width</code>, <code>height</code>, <code>top</code> padding, <code>bottom</code> padding and <code>side</code> padding of the phone cell</li>
-    <li><code>bgimg</code>: image url of the phone, which is appropriate to the <code>size</code></li>
-
-    <h2>Examples</h2>
-
-    <z-phone innerwidth="240">
-      <div style="background: silver; height: 800px;">Hello World</div>
-    </z-phone>
-
-    <z-phone size="{'width': 374, 'height': 777, 'top': 102, 'bottom': 102, 'side': 27}" bgimg="z-phone/iphone.png" innerwidth="240">
-        <div style="background: silver; height: 800px;">Hello World</div>
-    </z-phone>
-  </section>
+  <z-doc name="z-phone" path="ame=" z-phone="" ame="z-phone.html"></z-doc>
 
 </section>
 
@@ -5143,7 +5122,7 @@ Specify a language and theme:
       <z-form oneline="" style="width: 100%;">
         <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
         <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
-        <z-input-space label="">
+        <z-input-space>
           <z-btn>Login</z-btn>
         </z-input-space>
       </z-form>
@@ -5154,7 +5133,7 @@ Specify a language and theme:
       <z-form>
         <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
         <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
-        <z-input-space label="">
+        <z-input-space>
           <z-btn>Login</z-btn>
         </z-input-space>
       </z-form>
@@ -5165,7 +5144,7 @@ Specify a language and theme:
       <z-form flatten="">
         <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
         <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
-        <z-input-space label="">
+        <z-input-space>
           <z-btn>Login</z-btn>
         </z-input-space>
       </z-form>

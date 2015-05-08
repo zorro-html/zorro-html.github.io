@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html z="">
+<html z>
 <head>
 
 <meta charset="utf-8">
@@ -64,11 +64,11 @@
 <a href="https://github.com/zorro-html/zorro"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 101;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 
 <z-bar>
-  <div layout="" horizontal="" start="" style="margin-top: 5px;">
+  <div layout horizontal start style="margin-top: 5px;">
     <div style="margin-right: 15px;">
       <img src="logo/z_64x64.png">
     </div>
-    <div flex="">
+    <div flex>
       <h1 style="margin: 0;">Zorro</h1>
       <p style="margin: 0;">Hiding Goods in the Shadow</p>
     </div>
@@ -126,28 +126,7 @@
   <z-doc name="z-dock" path="z-dock/z-dock.html"></z-doc>
   <z-doc name="z-grid" path="z-grid/z-grid.html"></z-doc>
   <z-doc name="z-bar" path="z-bar/z-bar.html"></z-doc>
-  <!-- <z-doc name="z-phone" path="ame="z-phone/ame="z-phone.html"></z-doc> -->
-  <section name="z-phone" style="padding: 2em;">
-    <h1><code>&lt;z-phone&gt;</code></h1>
-
-    <p>Phone shell element, which could contains content to preview like in a smart phone</p>
-
-    <h2>Attributes</h2>
-
-    <li><code>innerwidth</code>: adjust the size the adapt the width of content in the phone cell</li>
-    <li><code>size</code>: JSON data to record <code>width</code>, <code>height</code>, <code>top</code> padding, <code>bottom</code> padding and <code>side</code> padding of the phone cell</li>
-    <li><code>bgimg</code>: image url of the phone, which is appropriate to the <code>size</code></li>
-
-    <h2>Examples</h2>
-
-    <z-phone innerwidth="240">
-      <div style="background: silver; height: 800px;">Hello World</div>
-    </z-phone>
-
-    <z-phone size="{'width': 374, 'height': 777, 'top': 102, 'bottom': 102, 'side': 27}" bgimg="z-phone/iphone.png" innerwidth="240">
-        <div style="background: silver; height: 800px;">Hello World</div>
-    </z-phone>
-  </section>
+  <z-doc name="z-phone" path="ame="z-phone/ame="z-phone.html"></z-doc>
 
 </section>
 
@@ -179,10 +158,10 @@
 
     <h2>Oneline Form</h2>
     <div>
-      <z-form oneline="" style="width: 100%;">
+      <z-form oneline style="width: 100%;">
         <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
         <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
-        <z-input-space label="">
+        <z-input-space>
           <z-btn>Login</z-btn>
         </z-input-space>
       </z-form>
@@ -193,7 +172,7 @@
       <z-form>
         <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
         <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
-        <z-input-space label="">
+        <z-input-space>
           <z-btn>Login</z-btn>
         </z-input-space>
       </z-form>
@@ -201,10 +180,10 @@
 
     <h2>Flatten Form</h2>
     <div>
-      <z-form flatten="">
+      <z-form flatten>
         <z-input-text name="username" label="Username" placeholder="Username"></z-input-text>
         <z-input-text name="password" type="password" label="Password" placeholder="Password"></z-input-text>
-        <z-input-space label="">
+        <z-input-space>
           <z-btn>Login</z-btn>
         </z-input-space>
       </z-form>
@@ -214,7 +193,7 @@
     <div id="form">
       <z-input-text id="test-input" label="Nickname" placeholder="2~16 characters" value="Nick">extra info ...</z-input-text>
       <z-input-text label="Personal Description" placeholder="less than 140 letters" value="Personal
-  Introduction" multi="">extra info ...</z-input-text>
+  Introduction" multi>extra info ...</z-input-text>
       <z-input-select flatten="false" name="a" label="Select" value="green">
         <z-datalist id="test-datalist">
           <option value="red">Red</option>
@@ -222,7 +201,7 @@
         </z-datalist>
         description
       </z-input-select>
-      <z-input-select flatten="false" name="c" multi="" label="Multiple Select" values="[&quot;female&quot;]">
+      <z-input-select flatten="false" name="c" multi label="Multiple Select" values="[&quot;female&quot;]">
         <z-datalist>
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -240,7 +219,7 @@
         </z-datalist>
         description
       </z-input-select>
-      <z-input-select flatten="true" name="d" multi="" label="Flatten Multiple Select" values="[&quot;option2&quot;]">
+      <z-input-select flatten="true" name="d" multi label="Flatten Multiple Select" values="[&quot;option2&quot;]">
         <z-datalist>
           <option value="option1">Option 1</option>
           <option value="option2">Option 2</option>
