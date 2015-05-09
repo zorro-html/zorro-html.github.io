@@ -1249,7 +1249,13 @@ html /deep/ .column-12 {
 
   section[name="features"] {text-align: center; margin-bottom: 40px;}
 
-  section[name="categories"] {font-size: 1.5em; max-width: 640px; margin-bottom: 40px;}
+  section[name="readme"] > p,
+  section[name="readme"] > ul,
+  section[name="readme"] > ol {font-size: 125%; max-width: 80%;}
+
+  section[name="categories"] > ul {font-size: 1.5em; max-width: 640px; margin: 80px auto;}
+
+  section[name="gallery"] h1 {margin: 80px auto; text-align: center; background: transparent; padding: 0;}
 
   section[name="z-input"] #form,
   section[name="z-input"] z-form {width: 320px;}
@@ -5063,7 +5069,170 @@ Specify a language and theme:
   </div>
 </section>
 
+<section name="readme">
+<h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
+<p>Just install, import and write</p>
+<h2 id="install-zorro"><a name="user-content-install-zorro" href="#install-zorro" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Install Zorro</h2>
+<prism-js language="markup">bower install zorro</prism-js>
+
+<h2 id="import"><a name="user-content-import" href="#import" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Import</h2>
+<prism-js language="markup">&lt;head&gt;
+&lt;link rel=&quot;import&quot; href=&quot;bower_components/z-btn/z-btn.html&quot;&gt;
+&lt;/head&gt;</prism-js>
+
+<h2 id="write-element"><a name="user-content-write-element" href="#write-element" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Write Element</h2>
+<p>by html:</p>
+<prism-js language="markup">&lt;body&gt;
+  &lt;z-btn&gt;Click!&lt;/z-btn&gt;
+&lt;/body&gt;</prism-js>
+
+<p>or javascript:</p>
+<prism-js language="markup">&lt;script&gt;
+  var element = document.createElement('z-btn');
+  element.innerHTML = 'Click!';
+  document.body.appendChild(element);
+&lt;/script&gt;</prism-js>
+
+</section>
+
+<section name="readme">
+<h1 id="why-zorro"><a name="user-content-why-zorro" href="#why-zorro" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why Zorro?</h1>
+<p>First of all, around my work, there are lots of management system need to build on the web today, and many of them were developed on <a href="http://getbootstrap.com/">Bootstrap</a> or Bootstrap-like UI framework just like <a href="http://sui.taobao.org">SUI</a>. And when first time I saw <a href="http://w3c.github.io/webcomponents">web components</a> and <a href="http://www.polymer-project.com/">Polymer</a>. I suddenly felt this kind of work could be super simple and stupid. So I try to re-implement all the Bootstrap components and features on <a href="http://www.polymer-project.com/">Polymer</a> which name of the plan is called <a href="https://github.com/Jinjiang/JIE">JIE</a>. At the same time I put more and more ideas about data and interaction in it. It makes the components more friendly to form, data and interactions. Finally I gave it a better name: Zorro. That&rsquo;s just how Zorro came out.</p>
+</section>
+
+<section name="readme">
+<h1 id="purpose"><a name="user-content-purpose" href="#purpose" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Purpose</h1>
+<p>We hope Zorro could make us better and easier to support development of management-system-liked websites all around us first. And go through to feel the benefits of declarative programming, component-oriented html5 file structure and workflows which could give us more convenience and inspirations on web development in future.</p>
+<h2 id="super-simple-to-write"><a name="user-content-super-simple-to-write" href="#super-simple-to-write" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Super Simple to Write</h2>
+<p>For each component, it&rsquo;s not only for the &ldquo;common sence&rdquo; of the dom structure + class name, but a simple and easy tag name. For example, a dialog component in Bootstrap is like below:</p>
+<prism-js language="markup">&lt;div class=&quot;modal fade&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
+        &lt;h4 class=&quot;modal-title&quot;&gt;Modal title&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        &lt;p&gt;One fine body&amp;hellip;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;&lt;!-- /.modal-content --&gt;
+  &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;
+&lt;/div&gt;&lt;!-- /.modal --&gt;
+</prism-js>
+
+<p>And the Zorro&rsquo;s:</p>
+<prism-js language="markup">&lt;z-dialog label=&quot;Modal title&quot;&gt;
+  &lt;p&gt;One fine body&amp;hellip;&lt;/p&gt;
+&lt;/z-dialog&gt;</prism-js>
+
+<p>It hide all the repeatly-wrtten code to the shadow with a very simple tag: <code>&lt;z-dialog&gt;</code></p>
+<p>Also, it&rsquo;s simple to be created by JavaScript anytime just with <code>createElement</code>:</p>
+<prism-js language="markup">var element = document.createElement('z-dialog');
+element.label = 'Modal title';
+element.innerHTML = '&lt;p&gt;One fine body&amp;hellip;&lt;/p&gt;';
+// document.body.appendChild(element);</prism-js>
+
+<h2 id="more-than-display-but-data-interactions"><a name="user-content-more-than-display-but-data-interactions" href="#more-than-display-but-data-interactions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More Than Display, But Data &amp; Interactions</h2>
+<p>When we use Bootstrap, we often need to write more JavaScript manually. Because Bootstrap almost doesn&rsquo;t consider how to bind data and handle data changes and user interactions. That&rsquo;s really boring task for web developers everyday. We put Bootstrap styles, data and actions together as a whole completely component. And hide the logic between data, event and display internal.</p>
+<p>Take pagination for example, in Bootstrap:</p>
+<prism-js language="markup">&lt;nav&gt;
+  &lt;ul class=&quot;pagination&quot;&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot; aria-label=&quot;Previous&quot;&gt;
+        &lt;span aria-hidden=&quot;true&quot;&gt;&amp;laquo;&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot; aria-label=&quot;Next&quot;&gt;
+        &lt;span aria-hidden=&quot;true&quot;&gt;&amp;raquo;&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</prism-js>
+
+<p>In fact you should have to use template engine or JavaScript to describe the pagination details.</p>
+<prism-js language="markup">&lt;nav&gt;
+  &lt;ul class=&quot;pagination&quot;&gt;
+    &lt;template repeat=&quot;{{i in pagelist}}&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot; on-click=&quot;{{changeCurrentPage(i)}}&quot;&gt;{{i + 1}}&lt;/a&gt;&lt;/li&gt;
+    &lt;/template&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</prism-js>
+
+<p>or</p>
+<prism-js language="markup">&lt;script&gt;
+  var ul = document.querySelector('.pagination');
+  // generate all li &gt; a and append
+  // bind each click event to re-render
+&lt;/script&gt;</prism-js>
+<p>And in Zorro:</p>
+<prism-js language="markup">&lt;z-pagination value=&quot;3&quot; max=&quot;10&quot;&gt;&lt;/z-pagination&gt;</prism-js>
+
+<p>That&rsquo;s it! When user click each page item, the pagination will automatically changed current page and re-render itself, and also, fire a page-changed event with the new current page number as the value.</p>
+<h2 id="re-thinking-about-forms"><a name="user-content-re-thinking-about-forms" href="#re-thinking-about-forms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Re-thinking About Forms</h2>
+<p>In re-implementing common elements. We felt more uncomfortable in forms. It make us paint sometimes. We conclude that user just do two things in forms:</p>
+<ol>
+<li>answer open question: input text, date, password, number, range, phone number &hellip;</li>
+<li>answer closed question: select, radio, checkbox &hellip;</li>
+</ol>
+<p>So we ventured to change the forms:</p>
+<ol>
+<li><code>&lt;z-input-text type="text|password|textarea|..."&gt;</code>: open question for text, date or number</li>
+<li><code>&lt;z-input-select flatten="auto|true|false" multi&gt;</code>: closed question for a single/multiple selection, and the <code>[flatten]</code> attribute is to described how options display: <code>true</code> for <code>input[type="radio"]</code>/<code>input[type="checkbox"]</code> and <code>false</code> for <code>select &gt; option</code>.</li>
+</ol>
+<p>We think that&rsquo;s more directly target the purpose and easy to use.</p>
+<h2 id="make-lovely-elements-as-many-as-possible"><a name="user-content-make-lovely-elements-as-many-as-possible" href="#make-lovely-elements-as-many-as-possible" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Make Lovely Elements As Many As Possible</h2>
+<ul>
+<li><code>&lt;z-phone&gt;</code> make you easy to check how a web page displayed in your phone</li>
+<li><code>&lt;z-rmb&gt;</code> is a mostly used and hard written manually component in my job&hellip; It save my workmates a lot of time.</li>
+<li><code>&lt;z-progress&gt;</code>&lsquo;s value could be bind to any JavaScript object which supports <a href="http://www.w3.org/TR/progress-events/">Progress Events</a>.</li>
+<li><code>&lt;z-dock&gt;</code> makes webapp layout much easier.</li>
+</ul>
+<p>There are lots of ideas and improvements in Zorro waiting for you to discover them.</p>
+</section>
+
+<section name="readme">
+<h1 id="notes"><a name="user-content-notes" href="#notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Notes</h1>
+<h2 id="compatibilities"><a name="user-content-compatibilities" href="#compatibilities" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Compatibilities</h2>
+<p>As the words above, Zorro development is based on Polymer. So you should have to add <a href="https://github.com/webcomponents/webcomponentsjs">webcomponents polyfill</a> in browsers which is not full-supported for web components. And currently, we just make sure Zorro works fine in webkit, maybe some mistakes and bugs in gecko / trident / spartan &hellip; in some kind of <code>-moz-</code> <code>-ms-</code> prefix issues. We believe that&rsquo;s easy to fixed in the future.</p>
+<h2 id="performance"><a name="user-content-performance" href="#performance" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Performance</h2>
+<p>Acturely, the performance of Zorro mostly depends on Polymer project. That&rsquo;s not very well for production yet, espacially on the mobile. So does the compatibilities. In another way that&rsquo;s why Zorro is focused on (internal) management system websites. Because most kind of these website are not extremely required about the rendering details but the functionality and structured component design. A good news is that the <a href="https://www.polymer-project.org/0.8/">next version of Polymer</a> will make better in compatibilities and performance. Zorro has chance to follow this plan.</p>
+</section>
+
+<section name="readme">
+<h1 id="whats-next"><a name="user-content-whats-next" href="#whats-next" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What&rsquo;s Next?</h1>
+<ul>
+<li>supports more browser vendors</li>
+<li>new components in pure inteactions like:<ul>
+<li>drag-n-drop</li>
+<li>popups</li>
+<li>layer manager</li>
+<li>validators etc.</li>
+</ul>
+</li>
+<li>easily theme changing</li>
+<li>more thinking for touch events</li>
+<li>tools for contributing, import and deployment</li>
+</ul>
+</section>
+
+<section name="readme">
+<h1 id="want-to-contribute"><a name="user-content-want-to-contribute" href="#want-to-contribute" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Want to Contribute?</h1>
+<p>Well. If you have read here, maybe you have been interested in Zorro. It you want to join us for contribution. Please contact <a href="https://github.com/orgs/zorro-html/people">any of our org members</a>. Or:</p>
+<ul>
+<li>write a component with <a href="https://github.com/zorro-html/zorro-generator">yeoman generator: zorro</a></li>
+<li>fix a bug or support more browsers, and send pull request to us</li>
+<li><a href="https://github.com/zorro-html/zorro/issues">write issue</a> to report a bug or suggestion</li>
+</ul>
+</section>
+
 <section name="categories">
+  <h1>Components Gallery</h1>
   <ul>
     <li>Typography: <small>non-invasive styles for heading, paragraphs, lists and tables</small></li>
     <li>Layout &amp; containers: <small>help you to sketch up quickly</small></li>
@@ -5072,6 +5241,10 @@ Specify a language and theme:
     <li>Form &amp; controls: <small>totally new form layout and input types</small></li>
     <li>Layers: <small>dialog, tooltips ...</small></li>
   </ul>
+</section>
+
+<section name="gallery">
+  <h1>Components Details</h1>
 </section>
 
 <section>
@@ -5218,6 +5391,36 @@ Specify a language and theme:
   <h1>Utils</h1>
 
   <z-doc name="z-script" path="z-script/z-script.html"></z-doc>
+</section> -->
+
+<!-- <section>
+  <ul>
+    <li><a href="https://github.com/zorro-html/z-typo">z-typo</a></li>
+    <li><a href="https://github.com/zorro-html/z-table">z-table</a></li>
+    <li><a href="https://github.com/zorro-html/z-icon">z-icon</a></li>
+    <li><a href="https://github.com/zorro-html/z-btn">z-btn</a></li>
+    <li><a href="https://github.com/zorro-html/z-menu">z-menu</a></li>
+    <li><a href="https://github.com/zorro-html/z-dropdown">z-dropdown</a></li>
+    <li><a href="https://github.com/zorro-html/z-btn-group">z-btn-group</a></li>
+    <li><a href="https://github.com/zorro-html/z-nav">z-nav</a></li>
+    <li><a href="https://github.com/zorro-html/z-panel">z-panel</a></li>
+    <li><a href="https://github.com/zorro-html/z-breadcrumb">z-breadcrumb</a></li>
+    <li><a href="https://github.com/zorro-html/z-pagination">z-pagination</a></li>
+    <li><a href="https://github.com/zorro-html/z-dock">z-dock</a></li>
+    <li><a href="https://github.com/zorro-html/z-grid">z-grid</a></li>
+    <li><a href="https://github.com/zorro-html/z-bar">z-bar</a></li>
+    <li><a href="https://github.com/zorro-html/z-input">z-input</a></li>
+    <li><a href="https://github.com/zorro-html/z-progress">z-progress</a></li>
+    <li><a href="https://github.com/zorro-html/z-rmb">z-rmb</a></li>
+    <li><a href="https://github.com/zorro-html/z-tag">z-tag</a></li>
+    <li><a href="https://github.com/zorro-html/z-time">z-time</a></li>
+    <li><a href="https://github.com/zorro-html/z-note">z-note</a></li>
+    <li><a href="https://github.com/zorro-html/z-phone">z-phone</a></li>
+    <li><a href="https://github.com/zorro-html/z-dialog">z-dialog</a></li>
+    <li><a href="https://github.com/zorro-html/z-tooltip">z-tooltip</a></li>
+    <li><a href="https://github.com/zorro-html/z-mask">z-mask</a></li>
+    <li><a href="https://github.com/zorro-html/z-script">z-script</a></li>
+  </ul>
 </section> -->
 
 <section style="margin-top: 200px; margin-bottom: 80px;">
